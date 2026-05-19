@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusBot — IA + Automação | Demo Thiago Lemos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/projeto4.css">
+</head>
+
+<body>
+
+    <div class="demo-banner">
+        <div class="demo-badge">Visualização Demo</div>
+        <div class="demo-info">Este é um <strong>exemplo do modelo IA + Automação</strong> — desenvolvido por Thiago
+            Lemos</div>
+        <a href="#" class="demo-cta-btn" onclick="openModal(); return false;">Quero este modelo →</a>
+    </div><br><br><br><br><br><br>
+
+    <nav>
+        <div class="nav-brand">Nexus<span>Bot</span></div>
+        <ul class="nav-menu">
+            <li><a href="#como-funciona">Como Funciona</a></li>
+            <li><a href="#beneficios">Benefícios</a></li>
+            <li><a href="#planos">Planos</a></li>
+            <li><a href="#depoimentos">Cases</a></li>
+        </ul>
+        <a href="#leads" class="nav-btn">Começar Agora</a>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-left">
+            <div class="hero-eyebrow">IA + Automação 24/7</div>
+            <h1 class="hero-h">
+                <span class="sub-accent">Seu site</span>
+                <span class="accent">que vende</span>
+                enquanto você dorme
+            </h1>
+            <p class="hero-desc">
+                Site completo com <strong>chatbot de IA personalizado</strong> para atender clientes, tirar dúvidas,
+                capturar leads e fechar vendas — automaticamente, sem precisar de atendente.
+            </p>
+            <div class="hero-btns">
+                <a href="#leads" class="btn-cyan">Quero meu chatbot →</a>
+                <a href="#como-funciona" class="btn-outline">Ver como funciona</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hstat">
+                    <div class="hstat-n">24<span>h</span></div>
+                    <div class="hstat-l">Atendimento</div>
+                </div>
+                <div class="hstat">
+                    <div class="hstat-n">3<span>x</span></div>
+                    <div class="hstat-l">Mais leads</div>
+                </div>
+                <div class="hstat">
+                    <div class="hstat-n">0<span>s</span></div>
+                    <div class="hstat-l">Tempo de espera</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="chat-window">
+                <div class="chat-topbar">
+                    <div class="chat-avatar">🤖</div>
+                    <div>
+                        <div class="chat-agent-name">Agente IA — SeuNegócio</div>
+                        <div class="chat-agent-status">Online agora</div>
+                    </div>
+                    <div class="chat-topbar-right">Powered by IA</div>
+                </div>
+                <div class="chat-body" id="chatBody">
+                </div>
+                <div class="quick-replies" id="quickReplies" style="display:none">
+                    <button class="qr-btn" onclick="sendQuick('💰 Ver preços')">💰 Ver preços</button>
+                    <button class="qr-btn" onclick="sendQuick('📦 Como funciona?')">📦 Como funciona?</button>
+                    <button class="qr-btn" onclick="sendQuick('📞 Falar com humano')">📞 Falar com humano</button>
+                </div>
+                <div class="chat-input-bar">
+                    <div class="chat-input-fake">Digite sua mensagem...</div>
+                    <button class="chat-send-btn">↑</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="proof-bar">
+        <span class="proof-label">Integra com</span>
+        <div class="proof-marquee">
+            <span class="proof-item">WhatsApp</span><span class="proof-dot">·</span>
+            <span class="proof-item">Instagram</span><span class="proof-dot">·</span>
+            <span class="proof-item">Hotmart</span><span class="proof-dot">·</span>
+            <span class="proof-item">Kiwify</span><span class="proof-dot">·</span>
+            <span class="proof-item">Mercado Livre</span><span class="proof-dot">·</span>
+            <span class="proof-item">Google Agenda</span><span class="proof-dot">·</span>
+            <span class="proof-item">Notion</span><span class="proof-dot">·</span>
+            <span class="proof-item">Sheets</span><span class="proof-dot">·</span>
+            <span class="proof-item">WhatsApp</span><span class="proof-dot">·</span>
+            <span class="proof-item">Instagram</span><span class="proof-dot">·</span>
+            <span class="proof-item">Hotmart</span><span class="proof-dot">·</span>
+            <span class="proof-item">Kiwify</span><span class="proof-dot">·</span>
+            <span class="proof-item">Mercado Livre</span><span class="proof-dot">·</span>
+            <span class="proof-item">Google Agenda</span><span class="proof-dot">·</span>
+            <span class="proof-item">Notion</span><span class="proof-dot">·</span>
+            <span class="proof-item">Sheets</span><span class="proof-dot">·</span>
+        </div>
+    </div>
+
+    <section id="como-funciona">
+        <div class="section-tag">Processo</div>
+        <h2 class="section-h">Como seu <em>chatbot</em><br>trabalha por você</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-num">01</div>
+                <div class="step-icon">🧠</div>
+                <div class="step-title">IA treinada no seu negócio</div>
+                <div class="step-desc">O chatbot aprende sobre seus produtos, preços, política de entrega, FAQs — tudo
+                    que seu cliente pergunta, ele responde com precisão.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">02</div>
+                <div class="step-icon">💬</div>
+                <div class="step-title">Atende em tempo real</div>
+                <div class="step-desc">Resposta instantânea 24h por dia. Seu cliente nunca fica sem resposta, mesmo de
+                    madrugada ou no feriado.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">03</div>
+                <div class="step-icon">🎯</div>
+                <div class="step-title">Captura e qualifica leads</div>
+                <div class="step-desc">Coleta nome, email e telefone de forma natural durante a conversa. Leads direto
+                    no seu CRM ou planilha, prontos para follow-up.</div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">04</div>
+                <div class="step-icon">🚀</div>
+                <div class="step-title">Fecha vendas automaticamente</div>
+                <div class="step-desc">Envia links de pagamento, oferece condições especiais e conduz o cliente até a
+                    compra — sem intervenção humana.</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beneficios">
+        <div class="beneficios-inner">
+            <div class="beneficios-grid">
+                <div>
+                    <div class="section-tag">Por que contratar</div>
+                    <h2 class="section-h" style="margin-bottom:2rem">Resultados que<br><em>aparecem</em><br>nos números
+                    </h2>
+                    <div class="benefit-list">
+                        <div class="benefit-row">
+                            <div class="benefit-ico">⚡</div>
+                            <div class="benefit-txt">
+                                <div class="benefit-title">Resposta em menos de 1 segundo</div>
+                                <div class="benefit-desc">Enquanto seu concorrente demora horas para responder no
+                                    WhatsApp, você já atendeu, qualificou e encaminhou o lead.</div>
+                            </div>
+                        </div>
+                        <div class="benefit-row">
+                            <div class="benefit-ico">💸</div>
+                            <div class="benefit-txt">
+                                <div class="benefit-title">Economize em atendentes</div>
+                                <div class="benefit-desc">Um chatbot resolve 80% das dúvidas sozinho. Sua equipe foca só
+                                    nos casos que realmente precisam de atenção humana.</div>
+                            </div>
+                        </div>
+                        <div class="benefit-row">
+                            <div class="benefit-ico">📈</div>
+                            <div class="benefit-txt">
+                                <div class="benefit-title">Converte mais visitantes em clientes</div>
+                                <div class="benefit-desc">Visitante com dúvida vai embora. Visitante que recebe resposta
+                                    na hora compra. Simples assim.</div>
+                            </div>
+                        </div>
+                        <div class="benefit-row">
+                            <div class="benefit-ico">🔗</div>
+                            <div class="benefit-txt">
+                                <div class="benefit-title">Integra com suas ferramentas</div>
+                                <div class="benefit-desc">WhatsApp, Instagram, Hotmart, Kiwify, planilhas, CRM — o bot
+                                    trabalha junto com tudo que você já usa.</div>
+                            </div>
+                        </div>
+                        <div class="benefit-row">
+                            <div class="benefit-ico">🛡️</div>
+                            <div class="benefit-txt">
+                                <div class="benefit-title">Garantia de satisfação</div>
+                                <div class="benefit-desc">30 dias de ajustes inclusos. Se não ficou do jeito que queria,
+                                    a gente refaz até ficar perfeito.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="metrics-card">
+                        <div class="metrics-header">
+                            <div class="metrics-title">Painel do Chatbot</div>
+                            <div class="metrics-live">Ao vivo</div>
+                        </div>
+                        <div class="metrics-body">
+                            <div class="metric-row">
+                                <div class="metric-label">Conversas hoje</div>
+                                <div class="metric-bar-wrap">
+                                    <div class="metric-bar" style="width:87%"></div>
+                                </div>
+                                <div class="metric-val">247</div>
+                            </div>
+                            <div class="metrics-divider"></div>
+                            <div class="metric-row">
+                                <div class="metric-label">Taxa de resposta</div>
+                                <div class="metric-bar-wrap">
+                                    <div class="metric-bar" style="width:100%;animation-delay:0.3s"></div>
+                                </div>
+                                <div class="metric-val">100%</div>
+                            </div>
+                            <div class="metrics-divider"></div>
+                            <div class="metric-row">
+                                <div class="metric-label">Leads capturados</div>
+                                <div class="metric-bar-wrap">
+                                    <div class="metric-bar" style="width:63%;animation-delay:0.6s"></div>
+                                </div>
+                                <div class="metric-val">62</div>
+                            </div>
+                            <div class="metrics-divider"></div>
+                            <div class="metric-row">
+                                <div class="metric-label">Vendas automáticas</div>
+                                <div class="metric-bar-wrap">
+                                    <div class="metric-bar" style="width:41%;animation-delay:0.9s"></div>
+                                </div>
+                                <div class="metric-val">18</div>
+                            </div>
+                            <div class="metrics-divider"></div>
+                            <div class="metric-row">
+                                <div class="metric-label">Satisfação</div>
+                                <div class="metric-bar-wrap">
+                                    <div class="metric-bar" style="width:96%;animation-delay:1.2s"></div>
+                                </div>
+                                <div class="metric-val">4.9★</div>
+                            </div>
+                        </div>
+                        <div class="metrics-footer">Conversas 34% acima de ontem</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planos">
+        <div class="planos-inner">
+            <div class="planos-header">
+                <div class="section-tag" style="justify-content:center">Investimento</div>
+                <h2 class="section-h" style="text-align:center">Escolha seu <em>plano</em></h2>
+            </div>
+            <div class="plans-grid">
+                <div class="plan-card">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-desc">Para quem quer começar a automatizar o atendimento com IA</div>
+                    <div class="plan-price"><span class="curr">R$</span>997</div>
+                    <div class="plan-period">pagamento único · entrega em 5 dias</div>
+                    <ul class="plan-features">
+                        <li>Site landing page incluso</li>
+                        <li>Chatbot com IA treinada</li>
+                        <li>Até 500 mensagens/mês</li>
+                        <li>Captura de leads</li>
+                        <li>Integração WhatsApp</li>
+                        <li class="no">Integração Instagram</li>
+                        <li class="no">Painel analytics</li>
+                        <li class="no">Suporte prioritário</li>
+                    </ul>
+                    <a href="#leads" class="btn-outline"
+                        style="display:block;text-align:center;padding:0.85rem">Escolher →</a>
+                </div>
+                <div class="plan-card featured">
+                    <div class="plan-badge">⚡ Mais Popular</div>
+                    <div class="plan-name">Pro</div>
+                    <div class="plan-desc">Para negócios que querem automatizar vendas de verdade</div>
+                    <div class="plan-price"><span class="curr">R$</span>1.997</div>
+                    <div class="plan-period">pagamento único · entrega em 7 dias</div>
+                    <ul class="plan-features">
+                        <li>Site completo multi-seção</li>
+                        <li>Chatbot IA avançado</li>
+                        <li>Mensagens ilimitadas</li>
+                        <li>Captura + qualificação de leads</li>
+                        <li>WhatsApp + Instagram</li>
+                        <li>Painel de analytics em tempo real</li>
+                        <li>Fechamento de vendas automático</li>
+                        <li class="no">Integrações personalizadas</li>
+                    </ul>
+                    <a href="#leads" class="btn-cyan" style="display:block;text-align:center;padding:0.85rem">Escolher
+                        →</a>
+                </div>
+                <div class="plan-card">
+                    <div class="plan-name">Elite</div>
+                    <div class="plan-desc">Solução completa sob medida para seu negócio</div>
+                    <div class="plan-price"><span class="curr">R$</span>3.997</div>
+                    <div class="plan-period">pagamento único · entrega em 14 dias</div>
+                    <ul class="plan-features">
+                        <li>Site premium + blog</li>
+                        <li>IA treinada no seu histórico</li>
+                        <li>Mensagens ilimitadas</li>
+                        <li>Funil de vendas completo</li>
+                        <li>Todas as integrações</li>
+                        <li>Analytics + relatórios</li>
+                        <li>Integrações personalizadas</li>
+                        <li>Suporte VIP 6 meses</li>
+                    </ul>
+                    <a href="#leads" class="btn-outline"
+                        style="display:block;text-align:center;padding:0.85rem">Escolher →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos">
+        <div class="depoimentos-inner">
+            <div class="section-tag">Cases reais</div>
+            <h2 class="section-h">O que dizem os <em>clientes</em></h2>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <div class="testi-text">"O chatbot atendeu 300 clientes no primeiro mês sozinho. Minha equipe parou
+                        de responder WhatsApp o dia todo e focou só em fechar contratos grandes."</div>
+                    <div class="testi-author">
+                        <div class="testi-ava">👨</div>
+                        <div>
+                            <div class="testi-name">Bruno Carvalho</div>
+                            <div class="testi-role">Agência de Marketing · Plano Pro</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <div class="testi-text">"Triplicamos a captação de leads em 45 dias. O bot qualifica melhor do que
+                        eu qualificava manualmente — pergunta tudo que preciso saber antes de ligar."</div>
+                    <div class="testi-author">
+                        <div class="testi-ava">👩</div>
+                        <div>
+                            <div class="testi-name">Camila Fontes</div>
+                            <div class="testi-role">Clínica Estética · Plano Elite</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="testi-stars">★★★★★</div>
+                    <div class="testi-text">"Vendo cursos online e o chatbot fecha vendas de madrugada quando estou
+                        dormindo. No primeiro mês pagou o investimento inteiro com uma semana de sobra."</div>
+                    <div class="testi-author">
+                        <div class="testi-ava">👨</div>
+                        <div>
+                            <div class="testi-name">Felipe Nascimento</div>
+                            <div class="testi-role">Infoprodutor · Plano Pro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leads">
+        <div class="leads-inner">
+            <div class="section-tag" style="justify-content:center;margin-bottom:1.5rem">Hora de agir</div>
+            <h2 class="leads-title">Seu negócio<br><em>24h ligado</em></h2>
+            <p class="leads-sub">Deixe seu e-mail e receba uma demonstração gratuita com um chatbot personalizado para o
+                seu nicho.</p>
+            <div class="lead-form">
+                <input type="email" placeholder="Seu melhor e-mail" />
+                <button type="button">Quero →</button>
+            </div>
+            <div class="lead-disclaimer">Sem spam · Demonstração gratuita · Resposta em até 24h</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-brand">Nexus<span>Bot</span></div>
+        <div class="footer-copy">© 2026 — Site criado por Thiago Lemos · thiagoolemoos__ no Instagram</div>
+    </footer>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">FECHAR ✕</button>
+            <div class="modal-tag">IA + Automação · Site com Chatbot</div>
+            <h3 class="modal-title">Vamos criar<br>o seu <em>bot?</em></h3>
+            <p class="modal-subtitle">Este é um exemplo do modelo <strong>Site Inteligente com Chatbot de IA</strong>.
+                Posso criar exatamente assim — treinado com as informações do seu negócio.</p>
+            <div class="modal-price-box">
+                <div>
+                    <div class="modal-price-label">A partir de</div>
+                    <div style="font-size:0.68rem;color:#4b5563;font-family:var(--font-mono);margin-top:0.2rem">Entrega
+                        em até 7 dias úteis</div>
+                </div>
+                <div class="modal-price-val"><span class="curr">R$</span>997</div>
+            </div>
+            <a href="https://wa.me/5521975930204?text=Olá%20Thiago!%20Vi%20a%20demo%20do%20Site%20com%20Chatbot%20de%20IA%20e%20quero%20contratar!"
+                target="_blank" class="modal-whats">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                    <path
+                        d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L0 24l6.29-1.511A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-5.002-1.368l-.36-.213-3.733.897.934-3.63-.234-.374A9.816 9.816 0 012.18 12C2.18 6.58 6.58 2.18 12 2.18S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
+                </svg>
+                Falar no WhatsApp
+            </a>
+            <a href="javascript:history.back()" class="modal-back">← Voltar ao portfólio</a>
+        </div>
+    </div>
+
+    <script>
+        const msgs = [
+            { type: 'bot', text: '👋 Olá! Sou o assistente virtual da NexusBot. Como posso te ajudar hoje?', delay: 600 },
+            { type: 'user', text: 'Oi! Quero saber mais sobre os planos.', delay: 2000 },
+            { type: 'bot', text: '⚡ Claro! Temos 3 planos a partir de R$ 997. Posso te contar sobre cada um. Qual é o seu objetivo principal?', delay: 3400 },
+            { type: 'user', text: 'Quero capturar mais leads no meu site.', delay: 5200 },
+            { type: 'bot', text: '🎯 Perfeito! O plano <strong>Pro</strong> é ideal pra você — inclui captura + qualificação de leads automática. Posso enviar o link para contratar agora?', delay: 6800 },
+            { type: 'user', text: 'Sim, pode enviar!', delay: 8600 },
+            { type: 'bot', text: '✅ Link enviado! Você será redirecionado para o WhatsApp do Thiago para finalizar. Alguma dúvida?', delay: 9800 },
+        ];
+
+        const chatBody = document.getElementById('chatBody');
+        const quickReplies = document.getElementById('quickReplies');
+
+        function addTyping() {
+            const t = document.createElement('div');
+            t.className = 'msg bot';
+            t.id = 'typing';
+            t.innerHTML = `<div class="msg-avatar">🤖</div><div class="typing-indicator"><span></span><span></span><span></span></div>`;
+            chatBody.appendChild(t);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+        function removeTyping() {
+            const t = document.getElementById('typing');
+            if (t) t.remove();
+        }
+        function addMsg(m, i) {
+            const isBot = m.type === 'bot';
+            const div = document.createElement('div');
+            div.className = `msg ${m.type}`;
+            div.style.animationDelay = '0s';
+            div.innerHTML = isBot
+                ? `<div class="msg-avatar">🤖</div><div><div class="msg-bubble">${m.text}</div></div>`
+                : `<div><div class="msg-bubble">${m.text}</div></div>`;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            if (i === msgs.length - 1) {
+                setTimeout(() => { quickReplies.style.display = 'flex'; }, 600);
+            }
+        }
+
+        let msgIdx = 0;
+        function scheduleNext() {
+            if (msgIdx >= msgs.length) return;
+            const m = msgs[msgIdx];
+            const prevDelay = msgIdx === 0 ? 0 : msgs[msgIdx - 1].delay;
+            const wait = m.delay - prevDelay;
+
+            setTimeout(() => {
+                if (m.type === 'bot') {
+                    addTyping();
+                    setTimeout(() => {
+                        removeTyping();
+                        addMsg(m, msgIdx);
+                        msgIdx++;
+                        scheduleNext();
+                    }, 900);
+                } else {
+                    addMsg(m, msgIdx);
+                    msgIdx++;
+                    scheduleNext();
+                }
+            }, wait);
+        }
+        scheduleNext();
+
+        function sendQuick(txt) {
+            quickReplies.style.display = 'none';
+            const div = document.createElement('div');
+            div.className = 'msg user';
+            div.style.animationDelay = '0s';
+            div.innerHTML = `<div><div class="msg-bubble">${txt}</div></div>`;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+            setTimeout(() => {
+                addTyping();
+                setTimeout(() => {
+                    removeTyping();
+                    const r = document.createElement('div');
+                    r.className = 'msg bot';
+                    r.style.animationDelay = '0s';
+                    r.innerHTML = `<div class="msg-avatar">🤖</div><div><div class="msg-bubble">Ótima escolha! Fale com o Thiago pelo WhatsApp para saber mais detalhes sobre essa opção. 🚀</div></div>`;
+                    chatBody.appendChild(r);
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1000);
+            }, 500);
+        }
+
+        function openModal() { document.getElementById('modal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow = ''; }
+        document.getElementById('modal').addEventListener('click', function (e) { if (e.target === this) closeModal(); });
+    </script>
+</body>
+
+</html>
