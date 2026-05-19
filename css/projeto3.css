@@ -1204,3 +1204,102 @@
             width: 100%;
         }
     }
+
+    /* ============================================================
+   FIX MOBILE — Projeto 3 (Maison Lara)
+   Cole este bloco no FINAL do arquivo css/projeto3.css
+   ============================================================ */
+
+    /* --------------------------------------------------
+   FIX 1: Newsletter — caixa de email saindo da tela
+   -------------------------------------------------- */
+
+    @media (max-width: 768px) {
+        .newsletter-section {
+            flex-direction: column;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .nl-form {
+            min-width: 0;
+            /* remove o min-width: 360px que causava o overflow */
+            width: 100%;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .nl-input {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        .nl-btn {
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    /* --------------------------------------------------
+   FIX 2: Carrinho — header escondido atrás do banner de demo
+   -------------------------------------------------- */
+
+    /*
+   O banner .demo-banner tem position: fixed e fica no topo.
+   No mobile ele quebra em ~3 linhas e ocupa aprox. 100px.
+   O cart-drawer precisa começar ABAIXO do banner para que
+   o botão "Fechar" fique visível e clicável.
+*/
+
+    .cart-drawer {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        /* Começa logo abaixo do banner fixo (altura real do banner no desktop ~37px) */
+        top: 37px;
+    }
+
+    .cart-header {
+        flex-shrink: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--border);
+    }
+
+    .cart-items {
+        flex: 1;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .cart-footer {
+        flex-shrink: 0;
+    }
+
+    /* No mobile o banner quebra em mais linhas e fica mais alto (~100px) */
+    @media (max-width: 600px) {
+        .cart-drawer {
+            top: 100px;
+            /* empurra o drawer para baixo do banner */
+            width: 100%;
+        }
+
+        .cart-header {
+            padding: 1rem;
+        }
+
+        /* Botão fechar maior e mais fácil de tocar */
+        .cart-close-btn {
+            font-size: 0.75rem;
+            padding: 0.6rem 1rem;
+            background: var(--cream);
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    }
+
+    /* Telas médias (tablet) — banner tem ~55px de altura */
+    @media (min-width: 601px) and (max-width: 900px) {
+        .cart-drawer {
+            top: 55px;
+        }
+    }
