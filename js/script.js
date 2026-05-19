@@ -109,17 +109,14 @@ if (window.innerWidth <= 768) {
 
     function animateCards() {
 
-        // resetar todos
         cards.forEach(card => {
             card.classList.remove('hide');
         });
 
-        // primeira some
         setTimeout(() => {
             cards[0].classList.add('hide');
         }, 4000);
 
-        // segunda some
         setTimeout(() => {
             cards[1].classList.add('hide');
         }, 5200);
@@ -134,10 +131,8 @@ if (window.innerWidth <= 768) {
 
                 started = true;
 
-                // inicia uma vez
                 animateCards();
 
-                // looping
                 setInterval(() => {
                     animateCards();
                 }, 10000);
