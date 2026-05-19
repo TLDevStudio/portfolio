@@ -359,28 +359,6 @@
         transform: translateY(-2px);
     }
 
-    .hero-scroll {
-        position: absolute;
-        bottom: 2.5rem;
-        left: 50%;
-        transform: translateX(-50%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        opacity: 0;
-        animation: fadeIn 1s 1.4s forwards;
-        z-index: 2;
-    }
-
-    .hero-scroll span {
-        font-family: var(--font-mono);
-        font-size: 0.62rem;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--muted);
-    }
-
     .scroll-line {
         width: 1px;
         height: 50px;
