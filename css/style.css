@@ -678,7 +678,7 @@
         color: rgba(0, 229, 255, 0.2);
     }
 
-    .project-info {}
+    /*.project-info {}*/
 
     .project-category {
         font-family: var(--font-mono);
