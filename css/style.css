@@ -70,18 +70,6 @@
         border-color: rgba(245, 200, 66, 0.5);
     }
 
-    @media (max-width: 768px) {
-
-        .cursor,
-        .cursor-ring {
-            display: none;
-        }
-
-        body {
-            cursor: auto;
-        }
-    }
-
     body::before {
         content: '';
         position: fixed;
@@ -1125,4 +1113,18 @@
     ::-webkit-scrollbar-thumb {
         background: var(--accent);
         border-radius: 2px;
+    }
+
+    @media (max-width: 768px) {
+
+        .cursor,
+        .cursor-ring {
+            display: none !important;
+        }
+
+        body,
+        a,
+        button {
+            cursor: auto !important;
+        }
     }
