@@ -20,11 +20,16 @@ window.addEventListener('scroll', () => {
     navbar.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-document.getElementById('hamburger').addEventListener('click', () => {
-    document.getElementById('mobileNav').classList.add('open');
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+
+hamburger.addEventListener('click', () => {
+    mobileNav.classList.toggle('open');
 });
-document.getElementById('mobileClose').addEventListener('click', closeMobile);
-function closeMobile() { document.getElementById('mobileNav').classList.remove('open'); }
+
+function closeMobile() {
+    mobileNav.classList.remove('open');
+}
 
 const revealEls = document.querySelectorAll('.reveal');
 const projectCards = document.querySelectorAll('.project-card');
