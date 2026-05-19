@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus Consultoria — Demo | Thiago Lemos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/projeto2.css">
+</head>
+
+<body>
+
+    <div class="demo-banner">
+        <div class="demo-badge">Visualização Demo</div>
+        <div class="demo-info">Este é um <strong>exemplo do modelo Site Completo</strong> — desenvolvido por Thiago
+            Lemos</div>
+        <a href="#" class="demo-cta-btn" onclick="openModal(); return false;">Quero este modelo →</a>
+    </div><br><br><br><br><br><br><br>
+
+    <nav>
+        <div class="nav-brand">Nexus<span>.</span></div>
+        <ul class="nav-menu">
+            <li><a href="#" onclick="showPage('home')">Home</a></li>
+            <li><a href="#" onclick="showPage('sobre')">Sobre</a></li>
+            <li><a href="#" onclick="showPage('servicos')">Serviços</a></li>
+            <li><a href="#" onclick="showPage('portfolio')">Portfólio</a></li>
+            <li><a href="#" onclick="showPage('contato')">Contato</a></li>
+        </ul>
+        <a href="#" class="nav-btn" onclick="showPage('contato')">Falar Conosco</a>
+    </nav>
+
+    <div class="page-tabs">
+        <button class="page-tab active" onclick="showPage('home')">Home</button>
+        <button class="page-tab" onclick="showPage('sobre')">Sobre</button>
+        <button class="page-tab" onclick="showPage('servicos')">Serviços</button>
+        <button class="page-tab" onclick="showPage('portfolio')">Portfólio</button>
+        <button class="page-tab" onclick="showPage('contato')">Contato</button>
+    </div>
+
+    <div id="page-home" class="page-section active">
+        <div class="hero-editorial">
+            <div class="hero-left-editorial">
+                <div class="hero-ornament">N</div>
+                <div class="hero-eyebrow-edit">Consultoria Estratégica</div>
+                <h1 class="hero-h-editorial">
+                    Transformamos<br>
+                    <em>negócios</em><br>
+                    em legados
+                </h1>
+                <p class="hero-sub-editorial">
+                    Estratégia, posicionamento e presença digital de excelência para empresas que querem
+                    <strong>liderar</strong> seus mercados com autoridade.
+                </p>
+                <div class="hero-btns-edit">
+                    <a href="#" onclick="showPage('servicos')" class="btn-gold">Nossos Serviços →</a>
+                    <a href="#" onclick="showPage('sobre')" class="btn-ghost-dark">Conheça a Nexus</a>
+                </div>
+            </div>
+            <div class="hero-right-editorial">
+                <div class="hero-visual-top">
+                    <div class="stat-editorial">
+                        <div class="stat-num-e">12<span>+</span></div>
+                        <div class="stat-lbl-e">Anos de Mercado</div>
+                    </div>
+                </div>
+                <div class="hero-visual-bottom">
+                    <div class="mini-stat">
+                        <div class="mini-stat-n">340<em>+</em></div>
+                        <div class="mini-stat-l">Projetos</div>
+                    </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-n">98<em>%</em></div>
+                        <div class="mini-stat-l">Satisfação</div>
+                    </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-n">R$<em>40M</em></div>
+                        <div class="mini-stat-l">Gerados</div>
+                    </div>
+                    <div class="mini-stat">
+                        <div class="mini-stat-n">15<em>+</em></div>
+                        <div class="mini-stat-l">Países</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-brand-e">Nexus<span>.</span></div>
+            <div class="footer-copy-e">© 2026 Nexus Consultoria · Site criado por Thiago Lemos · @thiagoolemoos__</div>
+        </footer>
+    </div>
+
+    <div id="page-sobre" class="page-section">
+        <section id="sobre-editorial">
+            <div class="about-editorial-grid">
+                <div>
+                    <div class="about-e-tag">Sobre a Nexus</div>
+                    <h2 class="about-e-title">Uma empresa<br>de <em>resultados</em><br>reais</h2>
+                    <p class="about-e-text">Há mais de uma década, a <strong>Nexus Consultoria</strong> transforma
+                        negócios comuns em referências absolutas de mercado. Nossa metodologia é simples: entender
+                        profundamente seu negócio e aplicar soluções que geram impacto real.</p>
+                    <p class="about-e-text" style="margin-top:1rem">Trabalhamos com empresas de todos os setores, do
+                        varejo ao agronegócio, do serviço ao produto. O que une todos os nossos clientes: a busca por
+                        excelência e resultados concretos.</p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <div class="value-icon">⚡</div>
+                            <div>
+                                <div class="value-name">Velocidade</div>
+                                <div class="value-desc">Resultados em 90 dias ou menos — sem burocracia.</div>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🎯</div>
+                            <div>
+                                <div class="value-name">Precisão</div>
+                                <div class="value-desc">Estratégias cirúrgicas, sem desperdício de recursos.</div>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">🏆</div>
+                            <div>
+                                <div class="value-name">Excelência</div>
+                                <div class="value-desc">Padrão de qualidade que fala por si mesmo.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual-right">
+                    <div class="about-big-quote">
+                        "Não existe negócio que não possa ser <strong>extraordinário</strong>. Só existem negócios que
+                        ainda não encontraram a estratégia certa."
+                        <div class="quote-author">— Fundador da Nexus Consultoria</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-brand-e">Nexus<span>.</span></div>
+            <div class="footer-copy-e">© 2026 Nexus Consultoria · Site criado por Thiago Lemos · @thiagoolemoos__</div>
+        </footer>
+    </div>
+
+    <div id="page-servicos" class="page-section">
+        <section id="servicos-editorial">
+            <div class="services-layout">
+                <div class="services-side-title">
+                    <div class="side-tag">O que fazemos</div>
+                    <h2 class="side-h">Nossas<br><em>Soluções</em></h2>
+                    <p class="side-desc">Cada serviço é entregue com atenção obsessiva aos detalhes e foco em resultado
+                        mensurável.</p>
+                </div>
+                <div class="services-list">
+                    <div class="service-row">
+                        <div class="service-num">01</div>
+                        <div class="service-content">
+                            <div class="service-title">Consultoria Estratégica</div>
+                            <div class="service-desc">Diagnóstico completo do seu negócio, identificação de
+                                oportunidades ocultas e roadmap detalhado para crescimento sustentável.</div>
+                        </div>
+                        <div class="service-arrow">→</div>
+                    </div>
+                    <div class="service-row">
+                        <div class="service-num">02</div>
+                        <div class="service-content">
+                            <div class="service-title">Posicionamento de Marca</div>
+                            <div class="service-desc">Construímos a narrativa e identidade que faz sua empresa ser
+                                lembrada e escolhida — não apenas encontrada.</div>
+                        </div>
+                        <div class="service-arrow">→</div>
+                    </div>
+                    <div class="service-row">
+                        <div class="service-num">03</div>
+                        <div class="service-content">
+                            <div class="service-title">Marketing Digital</div>
+                            <div class="service-desc">Estratégias de tráfego, conteúdo e conversão que geram clientes,
+                                não apenas seguidores ou curtidas.</div>
+                        </div>
+                        <div class="service-arrow">→</div>
+                    </div>
+                    <div class="service-row">
+                        <div class="service-num">04</div>
+                        <div class="service-content">
+                            <div class="service-title">Gestão de Vendas</div>
+                            <div class="service-desc">Estruturamos seu processo comercial do primeiro contato ao
+                                pós-venda, maximizando ticket médio e retenção.</div>
+                        </div>
+                        <div class="service-arrow">→</div>
+                    </div>
+                    <div class="service-row">
+                        <div class="service-num">05</div>
+                        <div class="service-content">
+                            <div class="service-title">Presença Digital</div>
+                            <div class="service-desc">Site, redes sociais e presença online completa e coerente que
+                                transmite profissionalismo e autoridade.</div>
+                        </div>
+                        <div class="service-arrow">→</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-brand-e">Nexus<span>.</span></div>
+            <div class="footer-copy-e">© 2026 Nexus Consultoria · Site criado por Thiago Lemos · @thiagoolemoos__</div>
+        </footer>
+    </div>
+
+    <div id="page-portfolio" class="page-section">
+        <section id="portfolio-editorial">
+            <div class="side-tag">Casos de sucesso</div>
+            <h2 class="side-h" style="margin-bottom:0">Projetos que<br><em>transformaram</em><br>negócios</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-card pc1">
+                    <div class="portfolio-card-bg">🏗️</div>
+                    <div class="portfolio-card-overlay"></div>
+                    <div class="portfolio-card-info">
+                        <div class="portfolio-card-cat">Construção Civil</div>
+                        <div class="portfolio-card-name">Construtora Alphaville</div>
+                    </div>
+                </div>
+                <div class="portfolio-card pc2">
+                    <div class="portfolio-card-bg">🌿</div>
+                    <div class="portfolio-card-overlay"></div>
+                    <div class="portfolio-card-info">
+                        <div class="portfolio-card-cat">Agronegócio</div>
+                        <div class="portfolio-card-name">Verde Campo Orgânicos</div>
+                    </div>
+                </div>
+                <div class="portfolio-card pc3">
+                    <div class="portfolio-card-bg">💊</div>
+                    <div class="portfolio-card-overlay"></div>
+                    <div class="portfolio-card-info">
+                        <div class="portfolio-card-cat">Saúde e Bem-estar</div>
+                        <div class="portfolio-card-name">Clínica Vita Premium</div>
+                    </div>
+                </div>
+                <div class="portfolio-card" style="background:linear-gradient(135deg,#1a001a,#0a000a)">
+                    <div class="portfolio-card-bg">🎨</div>
+                    <div class="portfolio-card-overlay"></div>
+                    <div class="portfolio-card-info">
+                        <div class="portfolio-card-cat">Moda e Estilo</div>
+                        <div class="portfolio-card-name">Atelier Brunner</div>
+                    </div>
+                </div>
+                <div class="portfolio-card" style="background:linear-gradient(135deg,#001a15,#000a08)">
+                    <div class="portfolio-card-bg">⚖️</div>
+                    <div class="portfolio-card-overlay"></div>
+                    <div class="portfolio-card-info">
+                        <div class="portfolio-card-cat">Advocacia</div>
+                        <div class="portfolio-card-name">Torres & Associados</div>
+                    </div>
+                </div>
+                <div class="portfolio-card" style="background:linear-gradient(135deg,#1a1a00,#0a0a00)">
+                    <div class="portfolio-card-bg">🍷</div>
+                    <div class="portfolio-card-overlay"></div>
+                    <div class="portfolio-card-info">
+                        <div class="portfolio-card-cat">Gastronomia</div>
+                        <div class="portfolio-card-name">Restaurante Époque</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-brand-e">Nexus<span>.</span></div>
+            <div class="footer-copy-e">© 2026 Nexus Consultoria · Site criado por Thiago Lemos · @thiagoolemoos__</div>
+        </footer>
+    </div>
+
+    <div id="page-contato" class="page-section">
+        <section id="contato-editorial">
+            <div class="contact-editorial-grid">
+                <div>
+                    <div class="contact-e-tag">Fale conosco</div>
+                    <h2 class="contact-e-title">Vamos<br>construir<br><em>juntos?</em></h2>
+                    <p class="contact-e-text">Agende uma conversa inicial gratuita. Sem compromisso, sem enrolação.
+                        Analisamos seu negócio e mostramos onde estão as oportunidades.</p>
+                    <div class="contact-info-items">
+                        <div class="ci-item">
+                            <div class="ci-icon">📧</div>
+                            <div>
+                                <div class="ci-label">E-mail</div>
+                                <div class="ci-value">contato@nexusconsultoria.com.br</div>
+                            </div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon">📱</div>
+                            <div>
+                                <div class="ci-label">WhatsApp</div>
+                                <div class="ci-value">(21) 9 7593-0204</div>
+                            </div>
+                        </div>
+                        <div class="ci-item">
+                            <div class="ci-icon">📍</div>
+                            <div>
+                                <div class="ci-label">Localização</div>
+                                <div class="ci-value">Rio de Janeiro, RJ — Brasil</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="contact-form">
+                        <div class="cf-row">
+                            <div class="cf-group">
+                                <div class="cf-label">Nome</div><input class="cf-input"
+                                    placeholder="Seu nome completo" />
+                            </div>
+                            <div class="cf-group">
+                                <div class="cf-label">Empresa</div><input class="cf-input"
+                                    placeholder="Nome da empresa" />
+                            </div>
+                        </div>
+                        <div class="cf-group">
+                            <div class="cf-label">E-mail</div><input class="cf-input" type="email"
+                                placeholder="seu@email.com" />
+                        </div>
+                        <div class="cf-group">
+                            <div class="cf-label">Como posso ajudar?</div><textarea class="cf-textarea"
+                                placeholder="Descreva seu projeto ou desafio..."></textarea>
+                        </div>
+                        <a href="https://wa.me/5521975930204?text=Olá!%20Vi%20a%20demo%20do%20Site%20Completo%20e%20tenho%20interesse."
+                            target="_blank" class="btn-gold" style="display:flex;justify-content:center">Enviar Mensagem
+                            →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="footer-brand-e">Nexus<span>.</span></div>
+            <div class="footer-copy-e">© 2026 Nexus Consultoria · Site criado por Thiago Lemos · @thiagoolemoos__</div>
+        </footer>
+    </div>
+
+    <div class="float-cta">
+        <div class="float-label">Quero este modelo</div>
+        <button class="float-btn" onclick="openModal()">◆ Contratar</button>
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">FECHAR ✕</button>
+            <div class="modal-tag">Site Completo Multi-páginas</div>
+            <h3 class="modal-title">Criar o<br>seu <em>site</em><br>assim?</h3>
+            <p class="modal-subtitle">Este é um exemplo do modelo <strong>Presença Digital Profissional</strong> — com
+                Home, Sobre, Serviços, Portfólio e Contato totalmente funcionais.</p>
+            <div class="modal-price-box">
+                <div>
+                    <div class="modal-price-label">Investimento</div>
+                    <div style="font-size:0.72rem;color:#999;font-family:var(--font-mono);margin-top:0.2rem">Entrega em
+                        até 7 dias úteis</div>
+                </div>
+                <div class="modal-price-val"><span class="curr">R$</span>997</div>
+            </div>
+            <a href="https://wa.me/5521975930204?text=Olá%20Thiago!%20Vi%20a%20demo%20do%20Site%20Completo%20e%20quero%20contratar!"
+                target="_blank" class="modal-whats">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                    <path
+                        d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L0 24l6.29-1.511A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-5.002-1.368l-.36-.213-3.733.897.934-3.63-.234-.374A9.816 9.816 0 012.18 12C2.18 6.58 6.58 2.18 12 2.18S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
+                </svg>
+                Falar no WhatsApp
+            </a>
+            <a href="javascript:history.back()" class="modal-back">← Voltar ao portfólio</a>
+        </div>
+    </div>
+
+    <script>
+        function showPage(page) {
+            document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('.page-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById('page-' + page).classList.add('active');
+            const tabs = { home: 0, sobre: 1, servicos: 2, portfolio: 3, contato: 4 };
+            document.querySelectorAll('.page-tab')[tabs[page]].classList.add('active');
+            window.scrollTo({ top: 37, behavior: 'smooth' });
+        }
+        function openModal() { document.getElementById('modal').classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeModal() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow = ''; }
+        document.getElementById('modal').addEventListener('click', function (e) { if (e.target === this) closeModal(); });
+    </script>
+</body>
+
+</html>

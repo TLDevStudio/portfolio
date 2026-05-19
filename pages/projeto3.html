@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Lara — Demo | Thiago Lemos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&family=Space+Mono:wght@400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/projeto3.css">
+</head>
+
+<body>
+
+    <div class="demo-banner">
+        <div class="demo-badge">Visualização Demo</div>
+        <div class="demo-info">Este é um <strong>exemplo do modelo E-commerce</strong> — desenvolvido por Thiago Lemos
+        </div>
+        <a href="#" class="demo-cta-btn" onclick="openModal(); return false;">Quero este modelo →</a>
+    </div><br><br><br><br>
+
+    <div class="announcement">✦ Frete grátis para compras acima de R$350 · Nova coleção Outono disponível ✦</div>
+
+    <nav>
+        <ul class="nav-left">
+            <li><a href="#">Coleções</a></li>
+            <li><a href="#">Novidades</a></li>
+            <li><a href="#">Sale</a></li>
+        </ul>
+        <div class="nav-brand-center">Maison Lara</div>
+        <div class="nav-right">
+            <a href="#">Buscar</a>
+            <a href="#">Conta</a>
+            <button class="cart-btn" onclick="toggleCart()">
+                Sacola <div class="cart-count">3</div>
+            </button>
+        </div>
+    </nav>
+
+    <div class="hero-ecom">
+        <div class="hero-col hero-col-main">
+            <div class="hero-col-main-bg">M</div>
+            <div style="position:relative;z-index:2">
+                <div class="hero-season">Coleção Outono 2026</div>
+                <h1 class="hero-h-ecom">
+                    Arte que<br>se veste
+                    <strong>com elegância</strong>
+                </h1>
+                <p class="hero-text-ecom">Peças criadas para mulheres que entendem que moda é linguagem. Cada detalhe,
+                    uma intenção.</p>
+                <a href="#colecao" class="btn-dark-luxury">Explorar Coleção →</a>
+            </div>
+        </div>
+        <div class="hero-col hero-product-col">
+            <div class="hero-product-img">👗</div>
+            <div class="hero-product-info">
+                <div class="hp-name">Vestido Seda Italiana</div>
+                <div class="hp-price">R$ 890,00</div>
+            </div>
+        </div>
+        <div class="hero-col hero-side-col">
+            <div class="side-product">
+                <div class="sp-img bg1">🧥</div>
+                <div class="sp-info">
+                    <div class="sp-name">Blazer Estruturado</div>
+                    <div class="sp-price">R$ 750,00</div>
+                </div>
+            </div>
+            <div class="side-product">
+                <div class="sp-img bg2">👜</div>
+                <div class="sp-info">
+                    <div class="sp-name">Bolsa Couro Vegano</div>
+                    <div class="sp-price">R$ 420,00</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="colecao">
+        <div class="collection-header">
+            <div>
+                <h2 class="ch-title">
+                    Nossa<br>
+                    <strong>Coleção</strong>
+                </h2>
+            </div>
+            <div class="filter-row">
+                <button class="filter-btn active" onclick="setFilter(this)">Tudo</button>
+                <button class="filter-btn" onclick="setFilter(this)">Vestidos</button>
+                <button class="filter-btn" onclick="setFilter(this)">Casacos</button>
+                <button class="filter-btn" onclick="setFilter(this)">Acessórios</button>
+                <button class="filter-btn" onclick="setFilter(this)">Sale</button>
+            </div>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card">
+                <div class="product-card-img" style="background:linear-gradient(135deg,#e8dfd0,#d5c8b5)"><span
+                        class="product-badge badge-new">Novo</span>👗</div>
+                <div class="product-card-info">
+                    <div class="pc-cat">Vestidos</div>
+                    <div class="pc-name">Vestido Midi Seda Italiana</div>
+                    <div class="pc-prices">
+                        <div class="pc-price">R$ 890,00</div>
+                    </div>
+                </div>
+                <button class="product-add" onclick="addToCart()">+ Adicionar à Sacola</button>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img" style="background:linear-gradient(135deg,#d0d8c8,#b8c5a8)"><span
+                        class="product-badge badge-sale">Sale</span>🧥</div>
+                <div class="product-card-info">
+                    <div class="pc-cat">Casacos</div>
+                    <div class="pc-name">Blazer Linho Estruturado</div>
+                    <div class="pc-prices">
+                        <div class="pc-price">R$ 590,00</div>
+                        <div class="pc-price-old">R$ 750,00</div>
+                    </div>
+                </div>
+                <button class="product-add" onclick="addToCart()">+ Adicionar à Sacola</button>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img" style="background:linear-gradient(135deg,#e0d5c8,#c8bfb0)">👜</div>
+                <div class="product-card-info">
+                    <div class="pc-cat">Acessórios</div>
+                    <div class="pc-name">Bolsa Couro Vegano Artesanal</div>
+                    <div class="pc-prices">
+                        <div class="pc-price">R$ 420,00</div>
+                    </div>
+                </div>
+                <button class="product-add" onclick="addToCart()">+ Adicionar à Sacola</button>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img" style="background:linear-gradient(135deg,#d8d0e0,#c0b8c8)"><span
+                        class="product-badge badge-new">Novo</span>💍</div>
+                <div class="product-card-info">
+                    <div class="pc-cat">Joias</div>
+                    <div class="pc-name">Colar Ouro Rosé 18k</div>
+                    <div class="pc-prices">
+                        <div class="pc-price">R$ 1.290,00</div>
+                    </div>
+                </div>
+                <button class="product-add" onclick="addToCart()">+ Adicionar à Sacola</button>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img" style="background:linear-gradient(135deg,#e8e0c8,#d0c8b0)">🩱</div>
+                <div class="product-card-info">
+                    <div class="pc-cat">Moda Praia</div>
+                    <div class="pc-name">Body Tricô Premium</div>
+                    <div class="pc-prices">
+                        <div class="pc-price">R$ 340,00</div>
+                    </div>
+                </div>
+                <button class="product-add" onclick="addToCart()">+ Adicionar à Sacola</button>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img" style="background:linear-gradient(135deg,#c8d8d0,#b0c8c0)"><span
+                        class="product-badge badge-sale">Sale</span>🧣</div>
+                <div class="product-card-info">
+                    <div class="pc-cat">Acessórios</div>
+                    <div class="pc-name">Lenço Estampado Seda</div>
+                    <div class="pc-prices">
+                        <div class="pc-price">R$ 180,00</div>
+                        <div class="pc-price-old">R$ 260,00</div>
+                    </div>
+                </div>
+                <button class="product-add" onclick="addToCart()">+ Adicionar à Sacola</button>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img" style="background:linear-gradient(135deg,#e0d0d8,#c8b8c0)">👠</div>
+                <div class="product-card-info">
+                    <div class="pc-cat">Calçados</div>
+                    <div class="pc-name">Scarpin Couro Italiano</div>
+                    <div class="pc-prices">
+                        <div class="pc-price">R$ 680,00</div>
+                    </div>
+                </div>
+                <button class="product-add" onclick="addToCart()">+ Adicionar à Sacola</button>
+            </div>
+            <div class="product-card">
+                <div class="product-card-img" style="background:linear-gradient(135deg,#d8e0e8,#b8c8d8)">🧤</div>
+                <div class="product-card-info">
+                    <div class="pc-cat">Acessórios</div>
+                    <div class="pc-name">Luvas Camurça Premium</div>
+                    <div class="pc-prices">
+                        <div class="pc-price">R$ 290,00</div>
+                    </div>
+                </div>
+                <button class="product-add" onclick="addToCart()">+ Adicionar à Sacola</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="newsletter-section">
+        <div class="nl-left">
+            <div class="nl-eyebrow">Exclusividades</div>
+            <div class="nl-title">Antes de todo mundo.<br><strong>Sempre.</strong></div>
+        </div>
+        <div class="nl-form">
+            <input class="nl-input" type="email" placeholder="Seu e-mail para receber em primeira mão" />
+            <button class="nl-btn">Inscrever →</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-top">
+            <div>
+                <div class="footer-brand-lux">Maison Lara</div>
+                <div class="footer-desc">Moda consciente e atemporal para mulheres que entendem elegância como estilo de
+                    vida, não tendência passageira.</div>
+            </div>
+            <div>
+                <div class="footer-col-title">Navegação</div>
+                <ul class="footer-links-list">
+                    <li><a href="#">Nova Coleção</a></li>
+                    <li><a href="#">Vestidos</a></li>
+                    <li><a href="#">Casacos</a></li>
+                    <li><a href="#">Acessórios</a></li>
+                    <li><a href="#">Sale</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-title">Ajuda</div>
+                <ul class="footer-links-list">
+                    <li><a href="#">Tamanhos</a></li>
+                    <li><a href="#">Trocas e Devoluções</a></li>
+                    <li><a href="#">Frete e Entrega</a></li>
+                    <li><a href="#">Cuidados</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer-col-title">Contato</div>
+                <ul class="footer-links-list">
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">WhatsApp</a></li>
+                    <li><a href="#">E-mail</a></li>
+                    <li><a href="#">Sobre nós</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-copy-lux">© 2026 Maison Lara · Site criado por Thiago Lemos · @thiagoolemoos__ no
+                Instagram</div>
+            <div class="footer-copy-lux">Pix · Cartão · Boleto · Parcelamento em até 12x</div>
+        </div>
+    </footer>
+
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <div class="cart-title">Sua Sacola</div>
+            <button class="cart-close-btn" onclick="toggleCart()">Fechar ✕</button>
+        </div>
+        <div class="cart-items">
+            <div class="cart-item">
+                <div class="cart-item-img">👗</div>
+                <div class="cart-item-info">
+                    <div class="ci-name">Vestido Midi Seda</div>
+                    <div class="ci-variant">Cor: Champagne · Tam: M</div>
+                    <div class="ci-price-row">
+                        <div class="ci-price">R$ 890,00</div>
+                        <div class="ci-qty"><button class="qty-btn" onclick="changeQty(this,-1)">−</button><span
+                                class="qty-num">1</span><button class="qty-btn" onclick="changeQty(this,1)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-img">👜</div>
+                <div class="cart-item-info">
+                    <div class="ci-name">Bolsa Couro Vegano</div>
+                    <div class="ci-variant">Cor: Caramelo</div>
+                    <div class="ci-price-row">
+                        <div class="ci-price">R$ 420,00</div>
+                        <div class="ci-qty"><button class="qty-btn" onclick="changeQty(this,-1)">−</button><span
+                                class="qty-num">1</span><button class="qty-btn" onclick="changeQty(this,1)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="cart-item-img">👠</div>
+                <div class="cart-item-info">
+                    <div class="ci-name">Scarpin Couro Italiano</div>
+                    <div class="ci-variant">Cor: Nude · Tam: 37</div>
+                    <div class="ci-price-row">
+                        <div class="ci-price">R$ 680,00</div>
+                        <div class="ci-qty"><button class="qty-btn" onclick="changeQty(this,-1)">−</button><span
+                                class="qty-num">1</span><button class="qty-btn" onclick="changeQty(this,1)">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <div class="cart-total-label">Total</div>
+                <div class="cart-total-val">R$ 1.990,00</div>
+            </div>
+            <button class="checkout-btn" onclick="openModal()">Finalizar Compra →</button>
+            <div class="payment-icons">
+                <span class="payment-icon">Pix</span>
+                <span class="payment-icon">Cartão</span>
+                <span class="payment-icon">Boleto</span>
+                <span class="payment-icon">12x s/ juros</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="float-cta">
+        <div class="float-label">Quero este modelo</div>
+        <button class="float-btn" onclick="openModal()">Contratar →</button>
+    </div>
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">FECHAR ✕</button>
+            <div class="modal-tag">E-commerce · Loja Virtual Completa</div>
+            <h3 class="modal-title">
+                Sua loja<br>
+                <strong>online</strong>
+            </h3>
+            <p class="modal-subtitle">Este é um exemplo do modelo <strong>Loja Virtual Completa</strong> — com catálogo,
+                sacola, filtros, checkout integrado e painel de controle.</p>
+            <div class="modal-price-box">
+                <div>
+                    <div class="modal-price-label">Investimento</div>
+                    <div style="font-size:0.7rem;color:#999;font-family:var(--font-mono);margin-top:0.2rem">Entrega em
+                        até 14 dias úteis</div>
+                </div>
+                <div class="modal-price-val"><span class="curr">R$</span>1.997</div>
+            </div>
+            <a href="https://wa.me/5521975930204?text=Olá%20Thiago!%20Vi%20a%20demo%20da%20Loja%20Virtual%20e%20quero%20contratar!"
+                target="_blank" class="modal-whats">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                    <path
+                        d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L0 24l6.29-1.511A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-5.002-1.368l-.36-.213-3.733.897.934-3.63-.234-.374A9.816 9.816 0 012.18 12C2.18 6.58 6.58 2.18 12 2.18S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
+                </svg>
+                Falar no WhatsApp
+            </a>
+            <a href="javascript:history.back()" class="modal-back">← Voltar ao portfólio</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleCart() {
+            document.getElementById('cartDrawer').classList.toggle('open');
+            document.getElementById('cartOverlay').classList.toggle('open');
+        }
+        function addToCart() {
+            document.getElementById('cartDrawer').classList.add('open');
+            document.getElementById('cartOverlay').classList.add('open');
+        }
+        function changeQty(btn, delta) {
+            const span = btn.parentElement.querySelector('.qty-num');
+            let n = parseInt(span.textContent) + delta;
+            if (n < 1) n = 1;
+            span.textContent = n;
+        }
+        function setFilter(btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+        function openModal() {
+            document.getElementById('cartDrawer').classList.remove('open');
+            document.getElementById('cartOverlay').classList.remove('open');
+            document.getElementById('modal').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow = ''; }
+        document.getElementById('modal').addEventListener('click', function (e) { if (e.target === this) closeModal(); });
+    </script>
+</body>
+
+</html>
