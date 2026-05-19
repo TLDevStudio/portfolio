@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thiago Lemos — Desenvolvedor Web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <nav id="navbar">
+        <div class="nav-logo">TL<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#processo">Processo</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+        <a href="https://wa.me/5521975930204" target="_blank" class="nav-cta">Orçamento</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-nav" id="mobileNav">
+        <button class="mobile-close" id="mobileClose">FECHAR ✕</button>
+        <a href="#sobre" onclick="closeMobile()">Sobre</a>
+        <a href="#projetos" onclick="closeMobile()">Projetos</a>
+        <a href="#processo" onclick="closeMobile()">Processo</a>
+        <a href="#contato" onclick="closeMobile()">Contato</a>
+    </div>
+
+    <section id="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-glow2"></div><br><br><br><br>
+
+        <div class="hero-content">
+            <div class="hero-tag">Disponível para novos projetos</div>
+            <h1 class="hero-title">
+                THIAGO
+                <span class="highlight">LEMOS</span>
+                <span class="sub">Desenvolvedor Web</span>
+            </h1>
+            <p class="hero-desc">
+                Crio <strong>sites de vendas</strong> que transformam visitantes em clientes.
+                Do design à automação, entrego soluções digitais que trabalham por você
+                <strong>24 horas por dia</strong> — enquanto você foca no que importa.
+            </p>
+            <div class="hero-actions">
+                <a href="#projetos" class="btn-primary">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                    Ver Projetos
+                </a>
+                <a href="#contato" class="btn-secondary">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                        <path d="M7 1C3.7 1 1 3.7 1 7s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 9V7m0-2V4" stroke="currentColor"
+                            stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                    Falar Comigo
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Rolar</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <div class="stats-band reveal">
+        <div class="stat">
+            <div class="stat-number">15+</div>
+            <div class="stat-label">Projetos Entregues</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Clientes Satisfeitos</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">IA</div>
+            <div class="stat-label">Powered Development</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number">48h</div>
+            <div class="stat-label">Tempo Médio de Entrega</div>
+        </div>
+    </div>
+
+    <section id="sobre">
+        <div class="about-text-side reveal">
+            <div class="about-label">Sobre mim</div>
+            <h2 class="about-title">Sites que <em>vendem</em><br>por você</h2>
+            <p class="about-text">
+                Combino desenvolvimento web moderno com <strong style="color:var(--text)">inteligência
+                    artificial</strong> para criar sites de vendas que são rápidos, bonitos e eficientes. Não é só um
+                site — é uma máquina de conversão.
+            </p>
+            <p class="about-text" style="margin-top:1rem">
+                Empresas que automatizam sua presença digital saem na frente: captam leads enquanto dormem, convertem
+                mais sem aumentar equipe e constroem autoridade online sem esforço manual constante.
+            </p>
+            <div class="skills-tags">
+                <span class="tag">HTML / CSS / JS</span>
+                <span class="tag">Landing Pages</span>
+                <span class="tag">E-commerce</span>
+                <span class="tag">Automação</span>
+                <span class="tag">IA Aplicada</span>
+                <span class="tag">Integração WhatsApp</span>
+                <span class="tag">SEO</span>
+                <span class="tag">Performance</span>
+            </div>
+        </div>
+        <div class="about-visual reveal">
+            <div class="about-card-stack">
+                <div class="acard">
+                    <div class="acard-icon">⚡</div>
+                    <div class="acard-title">Velocidade</div>
+                    <div class="acard-desc">Sites ultra-rápidos que não perdem clientes por lentidão</div>
+                </div>
+                <div class="acard">
+                    <div class="acard-icon">🤖</div>
+                    <div class="acard-title">Inteligência</div>
+                    <div class="acard-desc">IA integrada para chatbots, automações e captação 24/7</div>
+                </div>
+                <div class="acard">
+                    <div class="acard-icon">📈</div>
+                    <div class="acard-title">Conversão</div>
+                    <div class="acard-desc">Design focado em transformar visitante em comprador</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projetos">
+        <div class="section-header reveal">
+            <div>
+                <div class="section-label">Portfólio</div>
+                <h2 class="section-title">MEUS<br>PROJETOS</h2>
+            </div>
+            <p class="section-note">Cada projeto é único e desenvolvido com foco em resultado real para o seu negócio.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+
+            <div class="project-card" data-delay="0">
+                <div class="project-number">01</div>
+                <div class="project-info">
+                    <div class="project-category">Landing Page</div>
+                    <div class="project-name">Site de Vendas Essencial</div>
+                    <div class="project-desc">Página única de alta conversão com design profissional, formulário de
+                        captação de leads, seção de depoimentos e integração com WhatsApp. Ideal para lançamentos,
+                        serviços locais ou produto único.</div>
+                    <div class="project-features">
+                        <span class="feature-tag">Design responsivo</span>
+                        <span class="feature-tag">Botão WhatsApp</span>
+                        <span class="feature-tag">Formulário de leads</span>
+                        <span class="feature-tag">SEO básico</span>
+                    </div>
+                </div>
+                <div class="project-pricing">
+                    <div class="price-label">A partir de</div>
+                    <div class="price-value"><span class="currency">R$</span>497</div>
+                    <div class="price-note">Entrega em até 3 dias</div>
+                    <a href="https://wa.me/5521999999999?text=Olá%20Thiago!%20Tenho%20interesse%20no%20Site%20Essencial"
+                        target="_blank" class="price-cta">
+                        Quero esse →
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" data-delay="100">
+                <div class="project-number">02</div>
+                <div class="project-info">
+                    <div class="project-category">Site Completo</div>
+                    <div class="project-name">Presença Digital Profissional</div>
+                    <div class="project-desc">Site completo com múltiplas páginas: Home, Sobre, Serviços, Portfólio e
+                        Contato. Animações suaves, identidade visual forte, blog integrado e painel de edição simples
+                        para atualizar o conteúdo sem precisar de programador.</div>
+                    <div class="project-features">
+                        <span class="feature-tag">Multi-páginas</span>
+                        <span class="feature-tag">Blog / Notícias</span>
+                        <span class="feature-tag">Painel de edição</span>
+                        <span class="feature-tag">Google Analytics</span>
+                        <span class="feature-tag">Animações premium</span>
+                    </div>
+                </div>
+                <div class="project-pricing">
+                    <div class="price-label">A partir de</div>
+                    <div class="price-value"><span class="currency">R$</span>997</div>
+                    <div class="price-note">Entrega em até 7 dias</div>
+                    <a href="https://wa.me/5521999999999?text=Olá%20Thiago!%20Tenho%20interesse%20no%20Site%20Profissional"
+                        target="_blank" class="price-cta">
+                        Quero esse →
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" data-delay="200">
+                <div class="project-number">03</div>
+                <div class="project-info">
+                    <div class="project-category">E-commerce</div>
+                    <div class="project-name">Loja Virtual Completa</div>
+                    <div class="project-desc">Loja online com catálogo de produtos, carrinho de compras, checkout
+                        integrado (Pix, cartão, boleto), painel de controle para gerenciar pedidos e estoque. Automatize
+                        suas vendas sem depender de marketplace.</div>
+                    <div class="project-features">
+                        <span class="feature-tag">Catálogo de produtos</span>
+                        <span class="feature-tag">Pix / Cartão / Boleto</span>
+                        <span class="feature-tag">Gestão de estoque</span>
+                        <span class="feature-tag">Cupons desconto</span>
+                        <span class="feature-tag">App mobile</span>
+                    </div>
+                </div>
+                <div class="project-pricing">
+                    <div class="price-label">A partir de</div>
+                    <div class="price-value"><span class="currency">R$</span>1.997</div>
+                    <div class="price-note">Entrega em até 14 dias</div>
+                    <a href="https://wa.me/5521999999999?text=Olá%20Thiago!%20Tenho%20interesse%20na%20Loja%20Virtual"
+                        target="_blank" class="price-cta">
+                        Quero esse →
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" data-delay="300">
+                <div class="project-number">04</div>
+                <div class="project-info">
+                    <div class="project-category">IA + Automação</div>
+                    <div class="project-name">Site Inteligente com Chatbot</div>
+                    <div class="project-desc">Seu site completo com chatbot de IA personalizado para atender clientes,
+                        tirar dúvidas, capturar leads e até fechar vendas de forma automática — 24 horas por dia, 7 dias
+                        por semana, sem precisar de atendente.</div>
+                    <div class="project-features">
+                        <span class="feature-tag">Chatbot com IA</span>
+                        <span class="feature-tag">Atendimento 24/7</span>
+                        <span class="feature-tag">Captura automática de leads</span>
+                        <span class="feature-tag">Integração CRM</span>
+                        <span class="feature-tag">Automação WhatsApp</span>
+                    </div>
+                </div>
+                <div class="project-pricing">
+                    <div class="price-label">A partir de</div>
+                    <div class="price-value"><span class="currency">R$</span>2.497</div>
+                    <div class="price-note">Entrega em até 10 dias</div>
+                    <a href="https://wa.me/5521999999999?text=Olá%20Thiago!%20Tenho%20interesse%20no%20Site%20com%20IA"
+                        target="_blank" class="price-cta">
+                        Quero esse →
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card" data-delay="400">
+                <div class="project-number">05</div>
+                <div class="project-info">
+                    <div class="project-category">Projeto Personalizado</div>
+                    <div class="project-name">Solução Sob Medida</div>
+                    <div class="project-desc">Tem uma ideia específica? Precisa de funcionalidades únicas? Desenvolvemos
+                        qualquer solução web do zero, com sistema de agendamentos, reservas, membros, assinaturas ou
+                        qualquer outro requisito do seu negócio.</div>
+                    <div class="project-features">
+                        <span class="feature-tag">100% personalizado</span>
+                        <span class="feature-tag">Sistema de agendamento</span>
+                        <span class="feature-tag">Área de membros</span>
+                        <span class="feature-tag">API integrada</span>
+                    </div>
+                </div>
+                <div class="project-pricing">
+                    <div class="price-label">Valor</div>
+                    <div class="price-value" style="font-size:1.5rem; padding-top:0.5rem; color: var(--accent)">Sob
+                        consulta</div>
+                    <div class="price-note">Orçamento em 24h</div>
+                    <a href="https://wa.me/5521999999999?text=Olá%20Thiago!%20Preciso%20de%20um%20projeto%20personalizado"
+                        target="_blank" class="price-cta">
+                        Conversar →
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="processo">
+        <div class="section-header reveal" style="max-width:1400px;margin:0 auto 0;">
+            <div>
+                <div class="section-label">Como funciona</div>
+                <h2 class="section-title">DO BRIEFING<br>AO AR</h2>
+            </div>
+        </div>
+        <div class="process-grid reveal">
+            <div class="process-step">
+                <div class="step-num">01</div>
+                <div class="step-icon">💬</div>
+                <h3 class="step-title">Briefing</h3>
+                <p class="step-desc">Conversamos pelo WhatsApp para entender seu negócio, objetivos e o que você
+                    precisa. Sem enrolação — direto ao ponto.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">02</div>
+                <div class="step-icon">🎨</div>
+                <h3 class="step-title">Design</h3>
+                <p class="step-desc">Crio o layout do site com sua identidade visual. Você aprova antes de qualquer
+                    linha de código ser escrita.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">03</div>
+                <div class="step-icon">⚙️</div>
+                <h3 class="step-title">Desenvolvimento</h3>
+                <p class="step-desc">Desenvolvo o site com IA e código limpo, garantindo velocidade, responsividade e
+                    todas as funcionalidades combinadas.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-num">04</div>
+                <div class="step-icon">🚀</div>
+                <h3 class="step-title">Entrega</h3>
+                <p class="step-desc">Publico o site, faço os ajustes finais e entrego com suporte pós-lançamento para
+                    garantir que tudo funcione perfeitamente.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="cta-glow"></div>
+        <div class="cta-inner reveal">
+            <div class="cta-label">Vamos trabalhar juntos?</div>
+            <h2 class="cta-title">
+                SEU SITE<br>
+                <em>TE ESPERA</em>
+            </h2>
+            <p class="cta-sub">
+                Deixa de perder clientes por não ter presença digital. Bora criar algo que realmente vende?
+            </p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/5521975930204?text=Olá%20Thiago!%20Quero%20criar%20meu%20site" target="_blank"
+                    class="btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                        <path
+                            d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L0 24l6.29-1.511A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-5.002-1.368l-.36-.213-3.733.897.934-3.63-.234-.374A9.816 9.816 0 012.18 12C2.18 6.58 6.58 2.18 12 2.18S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
+                    </svg>
+                    Falar no WhatsApp
+                </a>
+                <a href="https://instagram.com/thiagoolemoos__/" target="_blank" class="btn-secondary">
+                    Ver no Instagram →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">TL<span>.</span></div>
+        <div class="footer-copy">© 2025 Thiago Lemos — Todos os direitos reservados</div>
+        <div class="footer-links">
+            <a href="#hero">Início</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </div>
+    </footer>
+    
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
