@@ -99,3 +99,57 @@ const statObserver = new IntersectionObserver(entries => {
 
 const statsBand = document.querySelector('.stats-band');
 if (statsBand) statObserver.observe(statsBand);
+
+if (window.innerWidth <= 768) {
+
+    const cards = document.querySelectorAll('.acard');
+    const aboutSection = document.querySelector('#sobre');
+
+    let started = false;
+
+    function animateCards() {
+
+        // resetar todos
+        cards.forEach(card => {
+            card.classList.remove('hide');
+        });
+
+        // primeira some
+        setTimeout(() => {
+            cards[0].classList.add('hide');
+        }, 4000);
+
+        // segunda some
+        setTimeout(() => {
+            cards[1].classList.add('hide');
+        }, 5200);
+
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach(entry => {
+
+            if (entry.isIntersecting && !started) {
+
+                started = true;
+
+                // inicia uma vez
+                animateCards();
+
+                // looping
+                setInterval(() => {
+                    animateCards();
+                }, 10000);
+
+            }
+
+        });
+
+    }, {
+        threshold: 0.5
+    });
+
+    observer.observe(aboutSection);
+
+}
