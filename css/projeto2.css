@@ -1224,3 +1224,103 @@
            transform: scale(1.06);
        }
    }
+
+   /* =========================
+   AJUSTES MOBILE
+========================= */
+
+   @media (max-width: 768px) {
+
+       /* HERO */
+       .hero-left-editorial {
+           padding: 4rem 7vw 4rem;
+           overflow: hidden;
+       }
+
+       h1.hero-h-editorial {
+           font-size: clamp(2.7rem, 14vw, 4rem);
+           line-height: 0.92;
+           letter-spacing: -0.03em;
+           word-break: keep-all;
+       }
+
+       .hero-sub-editorial {
+           font-size: 0.92rem;
+           line-height: 1.7;
+           max-width: 100%;
+       }
+
+       .hero-btns-edit {
+           flex-direction: column;
+           align-items: stretch;
+       }
+
+       .btn-gold,
+       .btn-ghost-dark {
+           justify-content: center;
+           width: 100%;
+       }
+
+       /* MENU SCROLL */
+       .page-tabs {
+           position: relative;
+           overflow-x: auto;
+           overflow-y: hidden;
+           white-space: nowrap;
+           scrollbar-width: none;
+           -webkit-overflow-scrolling: touch;
+           padding-right: 3.5rem;
+       }
+
+       .page-tabs::-webkit-scrollbar {
+           display: none;
+       }
+
+       /* SETA PISCANDO */
+       .page-tabs::after {
+           content: '➜';
+           position: absolute;
+           right: 1rem;
+           top: 50%;
+           transform: translateY(-50%);
+           font-size: 1rem;
+           color: var(--gold);
+           animation: swipeHint 1s infinite;
+           pointer-events: none;
+           background: linear-gradient(to right,
+                   rgba(255, 255, 255, 0),
+                   var(--surface) 45%);
+           padding-left: 1rem;
+       }
+
+       .page-tab {
+           flex-shrink: 0;
+       }
+
+       nav {
+           padding: 1rem 5vw;
+       }
+
+       .nav-btn {
+           padding: 0.7rem 1rem;
+           font-size: 0.55rem;
+       }
+   }
+
+   /* ANIMAÇÃO DA SETA */
+   @keyframes swipeHint {
+       0% {
+           transform: translateY(-50%) translateX(0);
+           opacity: 0.4;
+       }
+
+       50% {
+           transform: translateY(-50%) translateX(6px);
+           opacity: 1;
+       }
+
+       100% {
+           transform: translateY(-50%) translateX(0);
+           opacity: 0.4;
+       }
+   }
