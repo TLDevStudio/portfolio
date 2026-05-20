@@ -1225,13 +1225,9 @@
        }
    }
 
-   /* =========================
-   AJUSTES MOBILE
-========================= */
 
    @media (max-width: 768px) {
 
-       /* HERO */
        .hero-left-editorial {
            padding: 4rem 7vw 4rem;
            overflow: hidden;
@@ -1261,7 +1257,6 @@
            width: 100%;
        }
 
-       /* MENU SCROLL */
        .page-tabs {
            position: relative;
            overflow-x: auto;
@@ -1276,7 +1271,6 @@
            display: none;
        }
 
-       /* SETA PISCANDO */
        .page-tabs::after {
            content: '➜';
            position: absolute;
@@ -1307,7 +1301,6 @@
        }
    }
 
-   /* ANIMAÇÃO DA SETA */
    @keyframes swipeHint {
        0% {
            transform: translateY(-50%) translateX(0);
