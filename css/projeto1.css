@@ -31,7 +31,6 @@
         overflow-x: hidden;
     }
 
-    /* DEMO BANNER */
     .demo-banner {
         position: fixed;
         top: 0;
@@ -112,7 +111,6 @@
         transform: translateY(-1px);
     }
 
-    /* NAV */
     nav {
         position: sticky;
         top: 43px;
@@ -176,7 +174,6 @@
         background: var(--orange2);
     }
 
-    /* HERO */
     #hero {
         min-height: 92vh;
         display: grid;
@@ -389,7 +386,6 @@
         margin-top: 0.2rem;
     }
 
-    /* SOCIAL PROOF */
     .proof-bar {
         background: var(--surface);
         border-top: 1px solid var(--border);
@@ -438,7 +434,6 @@
         }
     }
 
-    /* BENEFITS */
     #beneficios {
         padding: 7rem 6vw;
         max-width: 1400px;
@@ -536,7 +531,6 @@
         font-weight: 300;
     }
 
-    /* PLANS */
     #planos {
         padding: 6rem 6vw;
         background: var(--surface);
@@ -655,7 +649,6 @@
         font-size: 0.9rem;
     }
 
-    /* TESTIMONIALS */
     #depoimentos {
         padding: 7rem 6vw;
         max-width: 1400px;
@@ -731,7 +724,6 @@
         margin-top: 0.1rem;
     }
 
-    /* LEADS FORM */
     #leads {
         padding: 7rem 6vw;
         background: var(--surface);
@@ -836,7 +828,6 @@
         letter-spacing: 0.1em;
     }
 
-    /* FOOTER */
     footer {
         background: #050505;
         border-top: 1px solid var(--border);
@@ -866,7 +857,6 @@
         letter-spacing: 0.1em;
     }
 
-    /* CLOSE MODAL */
     .modal-overlay {
         position: fixed;
         inset: 0;
@@ -1035,7 +1025,6 @@
         color: var(--text);
     }
 
-    /* FLOATING CTA */
     .float-cta {
         position: fixed;
         bottom: 2rem;
@@ -1095,7 +1084,6 @@
         }
     }
 
-    /* RESPONSIVE */
     @media (max-width: 900px) {
         #hero {
             grid-template-columns: 1fr;
@@ -1118,37 +1106,25 @@
         }
     }
 
-    /* ============================================================
-   FIX MOBILE — Modal (Projeto 1 e Projeto 2)
-   Cole este bloco no FINAL do arquivo CSS correspondente
-   ============================================================ */
-
-    /* Impede que o overlay bloqueie o scroll da página inteira no mobile */
     .modal-overlay {
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
         align-items: flex-start;
-        /* permite rolar se o conteúdo for maior que a tela */
         padding: 1rem;
     }
 
-    /* Garante que a caixa do modal seja scrollável e caiba na tela */
     .modal-box {
         margin: auto;
-        /* centraliza mesmo com align-items: flex-start */
         max-height: 90vh;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
 
-    /* Botão de fechar — fixo no topo da CAIXA (não da tela) para sempre ficar visível */
     .modal-close {
         position: sticky;
-        /* fica visível enquanto o usuário rola o modal */
         top: 0;
         z-index: 10;
         background: inherit;
-        /* fundo igual à caixa para não vazar conteúdo */
         width: 100%;
         text-align: right;
         padding: 0.5rem 0 0.5rem;
@@ -1156,7 +1132,6 @@
         margin-bottom: 0.5rem;
     }
 
-    /* Ajustes específicos para telas pequenas */
     @media (max-width: 600px) {
         .modal-overlay {
             padding: 0.5rem;
@@ -1164,16 +1139,14 @@
 
         .modal-box {
             padding: 1.5rem 1.2rem;
-            /* menos padding lateral no celular */
+
             max-height: 95vh;
         }
 
-        /* Garante que o título do modal não seja enorme demais */
         .modal-title {
             font-size: 2.2rem;
         }
 
-        /* Preço também pode ser menor */
         .modal-price-val {
             font-size: 2rem;
         }
