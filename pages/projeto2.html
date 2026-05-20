@@ -20,7 +20,7 @@
         <div class="demo-info">Este é um <strong>exemplo do modelo Site Completo</strong> — desenvolvido por Thiago
             Lemos</div>
         <a href="#" class="demo-cta-btn" onclick="openModal(); return false;">Quero este modelo →</a>
-    </div><br><br><br><br><br><br><br>
+    </div>
 
     <nav>
         <div class="nav-brand">Nexus<span>.</span></div>
@@ -371,11 +371,43 @@
             document.getElementById('page-' + page).classList.add('active');
             const tabs = { home: 0, sobre: 1, servicos: 2, portfolio: 3, contato: 4 };
             document.querySelectorAll('.page-tab')[tabs[page]].classList.add('active');
-            window.scrollTo({ top: 37, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (page === 'portfolio' && isTouchDevice()) {
+                resetCards();
+                setTimeout(checkCardsInView, 80);
+            }
         }
+
         function openModal() { document.getElementById('modal').classList.add('open'); document.body.style.overflow = 'hidden'; }
         function closeModal() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow = ''; }
         document.getElementById('modal').addEventListener('click', function (e) { if (e.target === this) closeModal(); });
+
+        function isTouchDevice() {
+            return window.matchMedia('(hover: none)').matches;
+        }
+
+        function resetCards() {
+            document.querySelectorAll('.portfolio-card').forEach(c => c.classList.remove('reveal-in'));
+        }
+
+        function checkCardsInView() {
+            if (!isTouchDevice()) return;
+            const vh = window.innerHeight;
+            document.querySelectorAll('.portfolio-card').forEach((card, i) => {
+                if (card.classList.contains('reveal-in')) return;
+                const rect = card.getBoundingClientRect();
+                if (rect.top < vh * 0.88 && rect.bottom > 0) {
+                    setTimeout(() => card.classList.add('reveal-in'), i % 2 === 0 ? 0 : 120);
+                }
+            });
+        }
+
+        window.addEventListener('scroll', checkCardsInView, { passive: true });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (isTouchDevice()) setTimeout(checkCardsInView, 100);
+        });
     </script>
 </body>
 
