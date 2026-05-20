@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistema de Ordem de Serviço</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <link rel="stylesheet" href="../css/projeto5.css">
+
+</head>
+
+<body>
+
+    <div class="demo-banner">
+        <div class="demo-left">
+            <div class="demo-badge">Demo — Sistema OS Mecânica</div>
+            <a href="javascript:history.back()" class="demo-back">← Voltar ao portfólio</a>
+        </div>
+        <div class="demo-info">Dados salvos localmente · Versão de <strong>demonstração</strong></div>
+        <button class="demo-cta" onclick="openModal()">Quero este sistema →</button>
+    </div><br><br><br><br><br>
+
+    <div class="app-wrapper">
+
+        <div class="app-header">
+            <div class="header-brand">
+                <div class="brand-icon">🔧</div>
+                <div>
+                    <div class="brand-name">Moto<span>OS</span> Pro</div>
+                    <div class="brand-sub">Sistema de Ordem de Serviço</div>
+                </div>
+            </div>
+            <div class="header-os">
+                <div class="os-num">OS Nº</div>
+                <div class="os-val" id="osNumero">—</div>
+                <div class="os-date" id="osData">—</div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('nova')">📋 Nova OS</button>
+            <button class="tab-btn" onclick="showTab('historico')">📂 Histórico</button>
+            <button class="tab-btn" onclick="showTab('dashboard')">📊 Dashboard</button>
+        </div>
+
+        <div id="panel-nova" class="panel active">
+            <div class="sec-title">Dados do Cliente</div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <div class="form-label">Nome completo</div>
+                    <input class="form-input" id="f-nome" placeholder="Ex: João da Silva" />
+                </div>
+                <div class="form-group">
+                    <div class="form-label">Telefone / WhatsApp</div>
+                    <input class="form-input" id="f-tel" placeholder="(21) 9 0000-0000" />
+                </div>
+                <div class="form-group">
+                    <div class="form-label">Endereço</div>
+                    <input class="form-input" id="f-end" placeholder="Rua, número, bairro" />
+                </div>
+                <div class="form-group">
+                    <div class="form-label">Placa da Moto</div>
+                    <input class="form-input" id="f-placa" placeholder="ABC-1234" />
+                </div>
+                <div class="form-group">
+                    <div class="form-label">Quilometragem</div>
+                    <input class="form-input" id="f-km" type="number" placeholder="Ex: 15000" />
+                </div>
+                <div class="form-group">
+                    <div class="form-label">Marca / Modelo</div>
+                    <input class="form-input" id="f-marca" placeholder="Ex: Honda CG 160" />
+                </div>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="services-header">
+                <div class="sec-title" style="margin-bottom:0">Serviços Realizados</div>
+                <button class="btn-add-svc" onclick="addServico()">+ Adicionar Serviço</button>
+            </div>
+            <div id="f-servicos"></div>
+
+            <hr class="divider" />
+
+            <div class="sec-title">Observações do Mecânico</div>
+            <div class="form-group form-group-span3">
+                <textarea class="form-textarea" id="f-obs"
+                    placeholder="Descreva observações técnicas, peças necessárias, próxima revisão..."></textarea>
+            </div>
+
+            <div class="total-box">
+                <div>
+                    <div class="total-label">Total da OS</div>
+                    <div style="font-size:0.7rem;color:var(--muted);font-family:var(--font-mono);margin-top:0.2rem"
+                        id="qtd-servicos">0 serviço(s)</div>
+                </div>
+                <div class="total-val"><span class="curr">R$ </span><span id="f-total">0,00</span></div>
+            </div>
+
+            <div class="actions-row">
+                <button class="btn btn-primary" onclick="salvarOS()">💾 Salvar OS</button>
+                <button class="btn btn-green" onclick="gerarPDF()">📄 Gerar PDF</button>
+                <button class="btn btn-outline" onclick="limparForm()">🗑 Limpar</button>
+            </div>
+        </div>
+
+        <div id="panel-historico" class="panel">
+            <div class="history-search">
+                <input placeholder="Buscar por cliente, placa ou OS..." oninput="filtrarHistorico(this.value)"
+                    id="busca-input" />
+            </div>
+            <div id="lista-historico"></div>
+        </div>
+
+        <div id="panel-dashboard" class="panel">
+            <div class="dash-grid">
+                <div class="dash-stat">
+                    <div class="dash-stat-num" id="d-total">0</div>
+                    <div class="dash-stat-label">OS Total</div>
+                </div>
+                <div class="dash-stat">
+                    <div class="dash-stat-num green" id="d-faturamento">R$ 0</div>
+                    <div class="dash-stat-label">Faturamento</div>
+                </div>
+                <div class="dash-stat">
+                    <div class="dash-stat-num yellow" id="d-ticket">R$ 0</div>
+                    <div class="dash-stat-label">Ticket Médio</div>
+                </div>
+                <div class="dash-stat">
+                    <div class="dash-stat-num" id="d-servicos">0</div>
+                    <div class="dash-stat-label">Serviços Realizados</div>
+                </div>
+            </div>
+            <div class="dash-recent-title">Últimas Ordens</div>
+            <div id="dash-recentes"></div>
+        </div>
+
+    </div>
+
+    <div class="modal-overlay" id="modal-contrato">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">FECHAR ✕</button>
+            <div class="modal-tag">Sistema OS · IA + Automação</div>
+            <h3 class="modal-title">SEU SISTEMA<br><em>COMPLETO</em></h3>
+            <p class="modal-sub">Este é um exemplo do <strong>MotoOS Pro</strong> — sistema completo com Firebase
+                (nuvem), multi-usuário, PDF, WhatsApp e muito mais. Personalizado com o nome e logo da sua oficina.</p>
+            <div class="modal-price-box">
+                <div>
+                    <div class="modal-price-label">Investimento</div>
+                    <div style="font-size:0.68rem;color:var(--muted);font-family:var(--font-mono);margin-top:0.2rem">
+                        Entrega em até 5 dias úteis</div>
+                </div>
+                <div class="modal-price-val"><span class="curr">R$</span>2.497</div>
+            </div>
+            <a href="https://wa.me/5521975930204?text=Olá%20Thiago!%20Vi%20a%20demo%20do%20Sistema%20OS%20e%20quero%20contratar!"
+                target="_blank" class="modal-whats">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                    <path
+                        d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.532 5.862L0 24l6.29-1.511A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.82 9.82 0 01-5.002-1.368l-.36-.213-3.733.897.934-3.63-.234-.374A9.816 9.816 0 012.18 12C2.18 6.58 6.58 2.18 12 2.18S21.818 6.58 21.818 12 17.42 21.818 12 21.818z" />
+                </svg>
+                Falar no WhatsApp
+            </a>
+            <a href="javascript:history.back()" class="modal-back">← Voltar ao portfólio</a>
+        </div>
+    </div>
+
+    <div class="confirm-overlay" id="confirm-dialog">
+        <div class="confirm-box">
+            <div class="confirm-title">Excluir OS?</div>
+            <div class="confirm-text">Esta ação não pode ser desfeita. A ordem de serviço será removida permanentemente.
+            </div>
+            <div class="confirm-btns">
+                <button class="btn btn-confirm-yes btn-sm" id="confirm-yes">Excluir</button>
+                <button class="btn btn-outline btn-sm btn-confirm-no" onclick="closeConfirm()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="../js/projeto5.js"></script>
+</body>
+
+</html>
