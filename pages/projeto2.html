@@ -408,6 +408,21 @@
         document.addEventListener('DOMContentLoaded', () => {
             if (isTouchDevice()) setTimeout(checkCardsInView, 100);
         });
+
+        (function () {
+            var tabs = document.querySelector('.page-tabs');
+            if (!tabs) return;
+
+            tabs.addEventListener('scroll', function () {
+                if (tabs.scrollLeft > 10) {
+                    tabs.classList.add('scrolled');
+                } else {
+                    tabs.classList.remove('scrolled');
+                }
+            }, { passive: true });
+
+            if (tabs.scrollLeft > 10) tabs.classList.add('scrolled');
+        })();
     </script>
 </body>
 
