@@ -1,4 +1,4 @@
-let ordens = JSON.parse(localStorage.getItem('motoos_ordens') || '[]');
+let ordens = JSON.parse(localStorage.getItem('motoos_ordens') || '[]');/* */
 let editandoId = null;
 let confirmCallback = null;
 
