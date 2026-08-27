@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Onda de Resultados · Mentoria de Vendas Bancárias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" type="image/png" href="../icon/icone.png">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="../css/projeto6.css">
+</head>
+
+<body>
+
+    <div class="demo-banner">
+
+        <div class="demo-left">
+            <div class="demo-badge">
+                ✦ DEMO — ONDA DE RESULTADOS
+            </div>
+        </div>
+
+        <div class="demo-info">
+            Dados salvos localmente · Versão de <strong>demonstração</strong>
+        </div>
+
+        <button type="button" class="demo-cta" onclick="openModal()">
+            Quero este produto →
+        </button>
+
+    </div>
+
+    <nav>
+
+        <div class="nav-spacer"></div>
+        <div class="nav-logo" id="navLogo">
+            <canvas class="nav-logo-canvas" id="navLogoCanvas" aria-hidden="true"></canvas>
+            <span class="nav-logo-text">Onda de </span><span>Resultados</span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li>
+                <a onclick="ir('home')">Início</a>
+            </li>
+
+            <li>
+                <a onclick="ir('home','#demos')">Aulas Demo</a>
+            </li>
+
+            <li>
+                <a onclick="ir('home','#modulos')">Módulos</a>
+            </li>
+
+            <li id="navAreaMembros" style="display:none;">
+                <a onclick="ir('membros')">Área de Membros</a>
+            </li>
+
+            <li id="navEntrar">
+                <a onclick="ir('login')" class="nav-cta">Entrar</a>
+            </li>
+        </ul>
+
+        <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <div class="view active" id="view-home">
+
+        <section class="hero reveal" id="topo">
+
+            <div class="wave-bg" id="wave-bg" aria-hidden="true">
+                <canvas id="heroWaveCanvas"></canvas>
+            </div>
+
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <p class="hero-eyebrow">Mentoria Exclusiva de Vendas</p>
+                    <h1>Do Atendimento à <em>Alta Performance</em> em Vendas</h1>
+                    <p class="hero-desc">
+                        Aprenda com um ex-gerente de agência que dominou consórcio, crédito e portfólio bancário na
+                        prática. Estratégias reais, argumentação afiada e método testado para bater metas com
+                        consistência.
+                    </p>
+                    <div class="hero-stats">
+                        <div>
+                            <div class="hero-stat-num" data-target="9" data-suffix="+">0</div>
+                            <div class="hero-stat-label">Anos de Banco</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-num" data-target="340" data-suffix="%">0</div>
+                            <div class="hero-stat-label">Meta Superada</div>
+                        </div>
+                        <div>
+                            <div class="hero-stat-num" data-target="12" data-suffix="k">0</div>
+                            <div class="hero-stat-label">Clientes Atendidos</div>
+                        </div>
+                    </div>
+                    <div class="hero-btns">
+                        <a onclick="ir('checkout')" class="btn-primary" style="cursor:pointer;">Garantir Minha Vaga</a>
+                        <a onclick="ir('home','#demos')" class="btn-outline" style="cursor:pointer;">Ver Aulas Demo</a>
+                    </div>
+                </div>
+
+                <div class="market-panel reveal">
+                    <div class="market-panel-header">
+                        <span class="market-pulse"></span>
+                        Mercado ao Vivo
+                    </div>
+                    <div class="market-items" id="marketItems">
+                        <div class="market-loading">Carregando dados...</div>
+                    </div>
+                    <div class="market-footer">Atualizado a cada 60s · CoinGecko & AwesomeAPI</div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <div class="divider-diamond"></div>
+        </div>
+
+        <section class="learn-section reveal">
+            <div class="section-inner">
+                <p class="section-tag">Conteúdo da Mentoria</p>
+                <h2 class="section-title">O que você vai dominar</h2>
+                <p class="section-subtitle">Uma jornada prática do diagnóstico do cliente até o fechamento — sem
+                    rodeios, sem teoria vazia.</p>
+                <div class="learn-grid">
+                    <div class="learn-card">
+                        <div class="learn-icon"></div>
+                        <h3>Abordagem de Alta Conversão</h3>
+                        <p>Como iniciar uma conversa de vendas que gera interesse imediato, adaptando o discurso ao
+                            perfil de cada cliente.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="learn-icon"></div>
+                        <h3>Gestão de Objeções</h3>
+                        <p>Scripts e raciocínio para responder com confiança às principais resistências: prazo,
+                            custo, concorrência e desconfiança.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="learn-icon"></div>
+                        <h3>Portfólio Bancário Completo</h3>
+                        <p>Consórcio, crédito pessoal, financiamento e investimentos — como posicionar cada produto
+                            no momento certo.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="learn-icon"></div>
+                        <h3>Ciclo de Relacionamento</h3>
+                        <p>Como transformar um cliente de um produto em um cliente de carteira — fidelização e
+                            upsell.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="learn-icon"></div>
+                        <h3>Gestão de Metas</h3>
+                        <p>Planejamento semanal, pipeline de oportunidades e como manter a consistência todos os
+                            meses.</p>
+                    </div>
+                    <div class="learn-card">
+                        <div class="learn-icon"></div>
+                        <h3>Mentalidade de Alta Performance</h3>
+                        <p>Como os melhores vendedores pensam, se preparam e reagem às pressões do dia a dia.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <div class="divider-diamond"></div>
+        </div>
+
+        <section class="video-section reveal" id="demos">
+            <div class="section-inner">
+                <p class="section-tag">Aulas Demonstrativas</p>
+                <h2 class="section-title" style="color:var(--white)">Veja como são as aulas antes de decidir</h2>
+                <p class="section-subtitle">Duas aulas gratuitas para você sentir a profundidade e a objetividade do
+                    método. <em style="opacity:.6;">(vídeos de demonstração livres de direitos, usados apenas como
+                        placeholder neste protótipo)</em></p>
+                <div class="video-grid">
+                    <div class="video-wrap">
+                        <div class="video-thumb" id="video1" onclick="carregarVideo(1)">
+                            <div class="play-btn">▶</div>
+                            <p class="video-placeholder-text">Clique para assistir</p>
+                        </div>
+                        <div class="video-label">
+                            <div class="video-label-tag">Demo · Módulo 1</div>
+                            <div class="video-label-title">Como apresentar consórcio sem assustar o cliente</div>
+                        </div>
+                    </div>
+                    <div class="video-wrap">
+                        <div class="video-thumb" id="video2" onclick="carregarVideo(2)">
+                            <div class="play-btn">▶</div>
+                            <p class="video-placeholder-text">Clique para assistir</p>
+                        </div>
+                        <div class="video-label">
+                            <div class="video-label-tag">Demo · Módulo 2</div>
+                            <div class="video-label-title">A resposta certa quando o cliente diz "não preciso de
+                                crédito"</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-divider">
+            <div class="divider-diamond"></div>
+        </div>
+
+        <section class="modules-section reveal" id="modulos">
+            <div class="section-inner">
+                <div class="modules-header">
+                    <div>
+                        <p class="section-tag">Grade de Conteúdo</p>
+                        <h2 class="section-title">Módulos da Mentoria</h2>
+                        <p class="section-subtitle">Cada módulo é uma especialização prática em um produto ou
+                            habilidade bancária.</p>
+                    </div>
+                    <div class="lock-notice">
+                        <strong>🔐 Acesso mediante pagamento</strong>
+                        Os módulos são desbloqueados após a confirmação da sua inscrição (simulada). O módulo 1 tem
+                        uma prévia disponível abaixo.
+                    </div>
+                </div>
+
+                <!-- módulo 1 — aberto para preview -->
+                <div class="module featured" id="mod1">
+                    <div class="module-header" onclick="toggleModulo('mod1')">
+                        <span class="module-number">01</span>
+                        <div class="module-title-wrap">
+                            <div class="module-title">Consórcio — Do Básico ao Fechamento</div>
+                            <div class="module-subtitle">Como vender o produto mais incompreendido do banco</div>
+                        </div>
+                        <div class="module-meta">
+                            <span class="module-lessons">8 aulas · ~2h30</span>
+                            <div class="lock-icon unlocked">✦</div>
+                        </div>
+                    </div>
+                    <div class="module-body" id="mod1-body">
+                        <p class="module-intro">
+                            O consórcio é um dos produtos com maior rejeição inicial — e maior potencial de
+                            fechamento quando bem explicado. Neste módulo você vai entender a lógica do produto, como
+                            apresentá-lo de forma clara e como lidar com as objeções mais comuns.
+                        </p>
+                        <div id="lista-mod1-preview"></div>
+                        <div class="objection-box">
+                            <h4>💬 Gestão de Objeções — Respostas Prontas</h4>
+                            <div class="objection-item">
+                                <div class="objection-q">❝ Consórcio demora muito, eu preciso do bem agora ❞</div>
+                                <div class="objection-a">"Entendo, essa dúvida é super comum. Muitos clientes são
+                                    contemplados nos primeiros meses, especialmente quando há lance. Se você tem uma
+                                    data limite, dá pra simular quanto seria necessário de lance para antecipar."
+                                </div>
+                            </div>
+                            <div class="objection-item">
+                                <div class="objection-q">❝ Prefiro financiamento, pelo menos sei quando vou receber
+                                    ❞</div>
+                                <div class="objection-a">"Faz sentido. No financiamento você tem a certeza da data,
+                                    mas paga bem mais pelo bem no longo prazo por causa dos juros. No consórcio você
+                                    paga o valor do bem. A pergunta é: certeza imediata ou melhor custo-benefício?"
+                                </div>
+                            </div>
+                            <div class="objection-item">
+                                <div class="objection-q">❝ Já tentei e não fui contemplado rápido ❞</div>
+                                <div class="objection-a">"A diferença está na estratégia de lance. Quem entende o
+                                    mecanismo usa o momento certo do grupo para dar um lance certeiro — é isso que a
+                                    gente vai construir juntos."</div>
+                            </div>
+                        </div>
+                        <div class="module-cta">
+                            <a onclick="ir('checkout')" class="btn-primary" style="cursor:pointer;">Acessar Módulo
+                                Completo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- módulos bloqueados (preview público) -->
+                <div id="modulos-bloqueados-publico"></div>
+            </div>
+        </section>
+
+        <section class="cta-banner reveal" id="preco">
+            <div class="section-tag">Inscrição Aberta</div>
+            <h2>Comece a vender como um profissional que obtém resultados</h2>
+            <p>Acesso vitalício (simulado) a todos os módulos, atualizações e comunidade exclusiva de profissionais
+                de vendas bancárias.</p>
+            <div class="price-display">
+                <span class="price-from">por apenas</span>
+                <span class="price-value">R$ 499</span>
+                <span class="price-period">/ acesso vitalício</span>
+            </div>
+            <a onclick="ir('checkout')" class="btn-primary" style="cursor:pointer;">Quero Garantir Meu Acesso</a>
+            <p class="cta-guarantee">✓ 7 dias de garantia · ✓ Acesso imediato · ✓ Suporte via comunidade</p>
+        </section>
+    </div>
+
+    <!-- login -->
+    <div class="view" id="view-login">
+        <div class="auth-screen">
+            <div class="auth-box">
+                <div class="auth-logo" onclick="ir('home')">Onda de <span>Resultados</span></div>
+                <p class="auth-subtitle">Entre na sua conta para acessar as aulas</p>
+
+                <div class="auth-msg auth-erro" id="loginErro"></div>
+
+                <div class="auth-field">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" placeholder="seu@email.com" />
+                </div>
+                <div class="auth-field">
+                    <label>Senha</label>
+                    <input type="password" id="loginSenha" placeholder="••••••••" />
+                </div>
+
+                <button class="auth-btn" id="btnLogin" onclick="fazerLogin()">Entrar</button>
+
+                <div class="auth-link">
+                    Não tem conta? <a onclick="ir('cadastro')">Cadastre-se</a>
+                </div>
+                <p style="text-align:center;font-size:0.7rem;color:var(--gray);margin-top:1rem;">
+                    Dica do protótipo: use o e-mail <strong>demo@ondaderesultados.com</strong> / senha
+                    <strong>demo123</strong> (conta de exemplo pré-cadastrada), ou crie a sua.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- cadastro -->
+    <div class="view" id="view-cadastro">
+        <div class="auth-screen">
+            <div class="auth-box">
+                <div class="auth-logo" onclick="ir('home')">Onda de <span>Resultados</span></div>
+                <p class="auth-subtitle">Crie sua conta para começar</p>
+
+                <div class="auth-msg auth-erro" id="cadastroErro"></div>
+                <div class="auth-msg auth-sucesso" id="cadastroSucesso"></div>
+
+                <div class="auth-field">
+                    <label>Nome completo</label>
+                    <input type="text" id="cadNome" placeholder="Seu nome" />
+                </div>
+                <div class="auth-field">
+                    <label>Email</label>
+                    <input type="email" id="cadEmail" placeholder="seu@email.com" />
+                </div>
+                <div class="auth-field">
+                    <label>Senha</label>
+                    <input type="password" id="cadSenha" placeholder="Mínimo 6 caracteres" />
+                </div>
+
+                <button class="auth-btn" id="btnCadastro" onclick="fazerCadastro()">Criar Conta</button>
+
+                <div class="auth-link">
+                    Já tem conta? <a onclick="ir('login')">Entrar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- checkout -->
+    <div class="view" id="view-checkout">
+        <div class="checkout-wrap">
+            <div class="checkout-summary">
+                <p class="summary-tag">Mentoria Exclusiva</p>
+                <h1 class="summary-title">Onda de <em>Resultados</em></h1>
+                <p class="summary-subtitle">Mentoria completa de vendas bancárias com Rafael Monteiro — consórcio,
+                    crédito, financiamento e muito mais.</p>
+
+                <div class="summary-price-box">
+                    <div class="summary-price-label">Investimento único</div>
+                    <div class="summary-price-value">R$ 0,00</div>
+                    <div class="summary-price-period">/ acesso vitalício</div>
+                    <div class="summary-includes">
+                        <div class="summary-include-item">6 módulos completos (36 aulas)</div>
+                        <div class="summary-include-item">Acesso vitalício e atualizações</div>
+                        <div class="summary-include-item">Scripts e modelos prontos</div>
+                        <div class="summary-include-item">Comunidade exclusiva de alunos</div>
+                        <div class="summary-include-item">Suporte direto com o mentor</div>
+                    </div>
+                </div>
+
+                <div class="summary-guarantee">
+                    <div>🛡️</div>
+                    <div><strong>7 dias de garantia</strong>Se não gostar, devolvemos 100% do valor sem perguntas.
+                    </div>
+                </div>
+
+                <div>
+                    <div class="summary-modules-title">O que está incluso</div>
+                    <div class="summary-module-item"><span class="summary-module-num">01</span>Consórcio — Do Básico
+                        ao Fechamento</div>
+                    <div class="summary-module-item"><span class="summary-module-num">02</span>As Primeiras
+                        Abordagens de Alta Performance</div>
+                    <div class="summary-module-item"><span class="summary-module-num">03</span>Financiamento
+                        Imobiliário</div>
+                    <div class="summary-module-item"><span class="summary-module-num">04</span>Cartão de Crédito e
+                        Seguros</div>
+                    <div class="summary-module-item"><span class="summary-module-num">05</span>Gestão de Carteira e
+                        Fidelização</div>
+                    <div class="summary-module-item"><span class="summary-module-num">06</span>Planejamento de
+                        Metas e Alta Performance</div>
+                </div>
+            </div>
+
+            <div class="checkout-form-wrap">
+                <div class="checkout-form-header">
+                    <div class="checkout-form-header-icon">🔒</div>
+                    <div>
+                        <div class="checkout-form-header-text">Pagamento Simulado</div>
+                        <div class="checkout-form-header-sub">Nenhuma cobrança real será feita</div>
+                    </div>
+                </div>
+                <div class="checkout-form-body">
+                    <div class="checkout-msg" id="checkoutMsg"></div>
+
+                    <div class="pix-info">
+                        <p>
+                            Este é um <strong>protótipo estático de portfólio</strong>: ao clicar em "pagar", nenhuma
+                            cobrança real acontece — seu acesso é liberado localmente no navegador, simulando
+                            cartão, PIX ou boleto.
+                        </p>
+                    </div>
+
+                    <div class="field-group">
+                        <label>Seu e-mail</label>
+                        <input type="email" id="checkoutEmail" placeholder="seu@email.com" />
+                    </div>
+                    <div class="field-group">
+                        <label>Seu nome</label>
+                        <input type="text" id="checkoutNome" placeholder="Nome completo" />
+                    </div>
+
+                    <button class="btn-pagar" id="btnPagar" onclick="irParaPagamento()">
+                        <span class="btn-label">🔒 Pagar R$ 0,00 (simulado)</span>
+                    </button>
+
+                    <div class="checkout-security">
+                        🔒 Ambiente de demonstração &nbsp;·&nbsp; 🛡️ Nenhum dado real é enviado &nbsp;·&nbsp; ✓
+                        100% local
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- área de membros -->
+    <div class="view" id="view-membros">
+
+        <nav class="membros-nav" style="position:static;">
+            <div class="nav-spacer"></div>
+            <div class="nav-logo" onclick="ir('home')" style="cursor:pointer;">
+                <span class="nav-logo-text">Onda de </span><span>Resultados</span>
+            </div>
+            <div class="membros-nav-right">
+                <span class="membros-nome">Olá, <strong id="nomeAluno">Aluno</strong></span>
+                <button class="btn-logout" onclick="fazerLogout()">Sair</button>
+            </div>
+        </nav>
+
+        <div id="membrosConteudo"></div>
+    </div>
+
+    <!-- footer -->
+    <footer id="footerPublico">
+        <div class="footer-inner">
+            <div>
+                <div class="footer-logo">Onda de <span>Resultados</span></div>
+                <div class="footer-tagline">Mentoria de vendas bancárias de alto desempenho</div>
+            </div>
+            <div class="footer-links">
+                <a onclick="ir('home')" style="cursor:pointer;">Sobre a Mentoria</a>
+                <a href="#" onclick="return false;">Política de Privacidade</a>
+                <a href="#" onclick="return false;">Termos de Uso</a>
+                <a href="#" onclick="return false;">Contato</a>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2026 Onda de Resultados. Protótipo fictício de portfólio — nenhuma marca, banco ou pessoa reais estão
+            envolvidos.
+        </div>
+    </footer>
+
+    <div class="purchase-modal" id="purchaseModal" aria-hidden="true" role="dialog" aria-modal="true"
+        aria-labelledby="purchaseModalTitle">
+
+        <div class="purchase-overlay" onclick="closeModal()"></div>
+
+        <div class="purchase-card">
+
+            <!-- detalhe superior -->
+            <div class="purchase-line"></div>
+
+            <!-- cabeçalho -->
+            <div class="purchase-header">
+
+                <button type="button" class="purchase-close" onclick="closeModal()" aria-label="Fechar">
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- conteúdo -->
+            <div class="purchase-content">
+
+                <h2 id="purchaseModalTitle">
+                    Plataforma para
+                    <span>Mentorias/Cursos</span>
+                    Online
+                </h2>
+
+                <p class="purchase-description">
+                    Plataforma completa para venda e entrega de cursos ou mentorias online, com landing page de alta
+                    conversão, sistema de cadastro e login, área de membros com progresso por aula, player de vídeo
+                    integrado e materiais em PDF por módulo. Ideal para infoprodutores, mentores e profissionais que
+                    querem vender conhecimento de forma profissional e escalável.
+                </p>
+
+
+                <!-- benefícios -->
+                <div class="purchase-benefits">
+
+                    <div class="purchase-benefit">
+                        <span class="benefit-icon">✓</span>
+                        <span>Landing Page de Vendas</span>
+                    </div>
+
+                    <div class="purchase-benefit">
+                        <span class="benefit-icon">✓</span>
+                        <span>Login e Cadastro</span>
+                    </div>
+
+                    <div class="purchase-benefit">
+                        <span class="benefit-icon">✓</span>
+                        <span>Área de Membros</span>
+                    </div>
+
+                    <div class="purchase-benefit">
+                        <span class="benefit-icon">✓</span>
+                        <span>Player de Aulas + PDFs</span>
+                    </div>
+
+                    <div class="purchase-benefit">
+                        <span class="benefit-icon">✓</span>
+                        <span>Sistema Responsivo</span>
+                    </div>
+
+                </div>
+
+
+                <!-- preço -->
+                <div class="purchase-price-box">
+
+                    <div class="purchase-price-info">
+
+                        <span class="purchase-price-label">
+                            INVESTIMENTO INICIAL
+                        </span>
+
+                        <span class="purchase-price-period">
+                            personalização sob consulta
+                        </span>
+
+                    </div>
+
+                    <div class="purchase-price">
+                        <small>A partir de</small>
+                        R$ 3.499
+                    </div>
+
+                </div>
+
+                <button type="button" class="purchase-button" onclick="goToWhatsApp()">
+
+                    QUERO ESTE PRODUTO
+
+                    <span>→</span>
+
+                </button><br>
+                <a href="javascript:history.back()" class="modal-back">← Voltar ao portfólio</a>
+
+
+                <p class="purchase-security">
+                    🔒 Ambiente de demonstração · Pagamento seguro
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL DE AULA -->
+    <div class="aula-modal" id="aulaModal" aria-hidden="true" role="dialog" aria-modal="true">
+
+        <div class="aula-overlay" onclick="fecharAulaModal()"></div>
+
+        <div class="aula-card">
+
+            <div class="aula-header">
+                <div>
+                    <div class="aula-modulo-tag" id="aulaModuloTag">MÓDULO 1</div>
+                    <div class="aula-titulo" id="aulaTitulo">Título da aula</div>
+                </div>
+                <button type="button" class="aula-close" onclick="fecharAulaModal()" aria-label="Fechar">×</button>
+            </div>
+
+            <div class="aula-video-wrap">
+                <video id="aulaVideoPlayer" controls playsinline></video>
+            </div>
+
+            <div class="aula-material" id="aulaMaterial">
+                <div class="aula-material-icon">📄</div>
+                <div class="aula-material-info">
+                    <div class="aula-material-titulo">Material de apoio desta aula</div>
+                    <div class="aula-material-nome" id="aulaMaterialNome">material-aula.pdf</div>
+                </div>
+                <a href="#" id="aulaMaterialLink" class="aula-material-btn" target="_blank" download>
+                    Baixar PDF ↓
+                </a>
+            </div>
+
+            <div class="aula-footer">
+                <button type="button" class="aula-nav-btn" id="aulaBtnAnterior" onclick="aulaAnterior()">←
+                    Anterior</button>
+                <span class="aula-contador" id="aulaContador">Aula 1 de 8</span>
+                <button type="button" class="aula-nav-btn aula-nav-proxima" id="aulaBtnProxima"
+                    onclick="aulaProxima()">Próxima →</button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="../js/projeto6.js"></script>
+
+</body>
+
+</html>
