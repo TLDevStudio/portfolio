@@ -2178,21 +2178,13 @@ footer {
 
 .auth-field input {
     width: 100%;
-
     padding: 0.8rem 1rem;
-
     border: 1.5px solid var(--gray-light);
-
     border-radius: 4px;
-
-    font-size: 0.9rem;
-
+    font-size: 16px;
     font-family: 'Inter', sans-serif;
-
     color: var(--navy);
-
     transition: border 0.2s;
-
     outline: none;
 }
 
@@ -2558,17 +2550,11 @@ footer {
 
 .field-group input {
     width: 100%;
-
     padding: 0.75rem 0.9rem;
-
     border: 1.5px solid var(--gray-light);
-
     border-radius: 4px;
-
-    font-size: 0.88rem;
-
+    font-size: 16px;
     font-family: 'Inter', sans-serif;
-
     outline: none;
 }
 
